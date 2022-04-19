@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{ 
+    font-family: 'Poppins';
+}
+
+body{
+    max-width: 1440px;
+    margin: auto !important;
+}

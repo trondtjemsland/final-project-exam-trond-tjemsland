@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Poppins';
+}
+
+body {
+  max-width: 1440px;
+  margin: auto !important;
+}
+
+header {
+  height: 140px;
+  background: rgba(0, 100, 98, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  z-index: 10;
+}
+
+.logo {
+  width: 360px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.navlinks {
+  color: #EDF2FB;
+  font-family: 'Poppins';
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 10px;
+  color: #EDF2FB;
+}
+
+nav li {
+  margin-left: 40px;
+}
+
+.heroImage {
+  height: 756px;
+  width: 1440px;
+  background-image: url(../../images/herobannerImg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.heroImage_textBox {
+  width: 50%;
+  padding: 60px;
+}
+
+.heroImage_h1 {
+  line-height: 125px;
+  color: #EDF2FB;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 96px;
+  text-transform: uppercase;
+}
+
+.heroImage_searchBar {
+  padding: 60px;
+}
+
+.formContainer {
+  padding: 60px;
+}
+/*# sourceMappingURL=styles.css.map */

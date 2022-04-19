@@ -1,0 +1,41 @@
+header{
+    height: 140px;
+    background: rgba(0, 100, 98, 0.5);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 10;
+}
+.logo{
+    width: 360px;
+}
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.navlinks{
+    color: $white;
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    text-transform:uppercase;
+    font-weight: 600;
+}
+
+nav ul {
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+    align-items: flex-end;
+    padding: 10px;
+    color: $white;
+}
+
+nav li {
+
+    margin-left:40px;
+
+	
+}
+
+
