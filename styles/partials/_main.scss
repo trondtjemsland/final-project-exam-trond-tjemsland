@@ -1,0 +1,106 @@
+.recommend{
+&_wrapper{
+    width: 65%;
+    padding: 48px 0px 48px 54px;
+}
+&_heading{
+    font-size: $h3TextSize;
+    font-weight: 700;
+    color: $text-color;
+}
+}
+
+.homeCards{
+    border-radius: 5px;
+    width:430px ;
+    height: 400px;
+    background-color: $white;
+    margin-bottom: 96px;
+
+    &_img{
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    &_textBox {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &_title{
+
+        font-weight: 700;
+        font-size:$cardtitle;
+  
+    }
+
+    &_price{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        & span{
+            font-size: 14px;
+            color: #94979D;
+            font-weight: 500;
+        }
+    }
+
+    &_adresse{
+        font-size: 16px;
+    
+    }
+
+    &_box1{
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+
+    }
+    &_box2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+       
+    }
+    
+
+}
+
+.cardBtn{
+    height: 50px;
+    width: 115px;
+    background-color: $primary-button;
+    color: $text-color;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Poppins', Courier, monospace;
+}
+
+.homeInfo{
+    &_wrapper{
+        margin: auto;
+        width:1280px; 
+        height: 765px;
+        background-color: $white;
+        border-radius: 20px;
+    }
+
+    &_heading{
+        text-align: center;
+        color: $text-color;
+
+        & h2{
+            padding-top: 100px;
+            font-size:$h2TextSize;
+            font-weight: 600;
+        }
+    }
+
+
+}
+
+.iconBox{
+    height:100px ;
+    width: 100px;
+    border-radius: 50px;
+    background-color:$background_color ;
+}

@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 *{
     margin: 0;
@@ -12,11 +8,16 @@ a{
     text-decoration: none;
 }
 
-p{ 
+p,h1,h2,h3,h4{ 
     font-family: 'Poppins';
 }
 
 body{
+    background-color:$background_color;
+}
+
+main{
+    background-color:$background_color;
     max-width: 1440px;
-    margin: auto !important;
+    margin: auto;
 }

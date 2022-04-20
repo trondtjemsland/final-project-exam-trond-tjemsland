@@ -1,0 +1,13 @@
+.footer{
+    &_wrapper{
+        display: flex;
+        height: 200px;
+        background-color:$green;
+    }
+
+    &_heading{
+        font-family: 'Bebas Neue', cursive;
+        font-size: 48px;
+        color: $white ;
+    }
+}
