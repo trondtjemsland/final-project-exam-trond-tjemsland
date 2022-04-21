@@ -21,7 +21,6 @@ export default function Home() {
 							Hotels we recommend for our customers
 						</h3>
 					</div>
-
 					<Homecards />
 					<Homeinfo />
 					<Dazeclub />
