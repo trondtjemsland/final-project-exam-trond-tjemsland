@@ -7,7 +7,7 @@ function Homecards() {
 			<div className="homeCards">
 				<div>
 					<Image
-						src="../public/img/dazeclub.png"
+						src="/img/portugal.jpg"
 						height="287px"
 						width="430px"
 						className="homeCards_img"
