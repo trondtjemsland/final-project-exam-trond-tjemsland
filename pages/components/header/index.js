@@ -3,10 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-export function HeroHeader() {
+function HeroHeader() {
 	const Router = useRouter();
 	return (
-		<header className="navBarHero">
+		<header className="navBar">
 			<div className="logo">
 				<Link href="/">
 					<a>
@@ -48,6 +48,8 @@ export function HeroHeader() {
 		</header>
 	);
 }
+
+export default HeroHeader();
 
 export function Header() {
 	const Router = useRouter();
