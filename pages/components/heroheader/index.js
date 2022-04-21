@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 function HeroHeader() {
 	const router = useRouter();
 	return (
-		<header className="navBar">
+		<header className="navBarHero">
 			<div className="logo">
 				<Link href="/">
 					<a>
@@ -49,50 +49,4 @@ function HeroHeader() {
 	);
 }
 
-export default HeroHeader();
-
-export function Header() {
-	const router = useRouter();
-	return (
-		<header className="navBar">
-			<div className="logo">
-				<Link href="/">
-					<a>
-						<Image src="/logo4.svg" width="340px" height="140px" alt="logo" />
-					</a>
-				</Link>
-			</div>
-			<nav>
-				<ul className="navlinks">
-					<li>
-						<Link href="/hotels">
-							<a
-								className={
-									router.pathname === '/hotels' ? 'active' : 'inactive'
-								}>
-								Hotels
-							</a>
-						</Link>
-					</li>
-					<li>
-						<Link href="#">
-							<a className={router.pathname === '#' ? 'active' : 'inactive'}>
-								Reviews
-							</a>
-						</Link>
-					</li>
-					<li>
-						<Link href="/contact">
-							<a
-								className={
-									router.pathname === '/contact' ? 'active' : 'inactive'
-								}>
-								Contact
-							</a>
-						</Link>
-					</li>
-				</ul>
-			</nav>
-		</header>
-	);
-}
+export default HeroHeader;

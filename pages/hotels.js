@@ -1,6 +1,7 @@
 import React from 'react';
-import { Header } from './components/header';
+
 import Head from 'next/head';
+import Header from './components/header/header';
 
 function Hotels() {
 	return (
