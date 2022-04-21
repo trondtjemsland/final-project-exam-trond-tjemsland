@@ -17,6 +17,7 @@
     background-color: $white;
     margin-bottom: 96px;
 
+
     &_img{
         border-radius: 5px 5px 0px 0px;
     }
@@ -76,12 +77,14 @@
 }
 
 .homeInfo{
+
     &_wrapper{
         margin: auto;
         width:1280px; 
         height: 765px;
         background-color: $white;
         border-radius: 20px;
+        margin-bottom: 80px;
     }
 
     &_heading{
@@ -95,7 +98,21 @@
         }
     }
 
+    &_iconContainer{
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: center;
+    }
 
+
+}
+
+.iconBox_wrapper{
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+    margin-top:100px;
 }
 
 .iconBox{
@@ -103,4 +120,109 @@
     width: 100px;
     border-radius: 50px;
     background-color:$background_color ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+    &_icon{
+        font-size: 60px;
+        color: $text-color;
+    }
+
+    &_heading{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &_link{
+        font-size: 16px;
+        font-weight: 600;
+        color: #5E6368;
+    }
+
+}
+
+.club{
+        &_wrapper{
+        display: flex;
+        width: 90%;
+        height: 410px;
+        background-color: $white;
+        margin: auto;
+        border-radius: 20px;
+        margin-bottom: 80px;
+    }
+
+    &_textBoxWrapper{
+        margin-top: 56px;
+        margin-left: 80px;
+        & h2 {
+            font-size: $h2TextSize;
+            font-weight: 600;
+            color: $text-color;
+        }
+
+        & input{
+            height: 60px;
+            width: 100%;
+            padding: 10px;
+            font-weight: 500;
+            font-family: 'Poppins';
+            border-radius: 10px;
+            background-color: $background_color;
+        }
+    }
+
+
+    &_imageWrapper{
+       &_img{
+        border-radius:20px 0px 0px 20px;
+       }
+    }
+
+    &_textBox{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_textBoxContainer{
+        &_info{
+            margin-top: 10px;
+            & p{
+                font-weight: 600;
+                font-size: 18px;
+
+            }
+            & span{
+                font-family: 'Poppins', Courier, monospace;
+                font-weight: 500;
+            }
+        }
+      
+    }
+
+    &_btnBox{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &_btn{
+        height: 60px;
+        width: 144px;
+        border-radius: 10px;
+        background-color:$primary-button;
+        font-size:20px ;
+        font-weight: 600;
+        font-family: 'Poppins', Courier, monospace;
+    }
+
+}
+
+.textBoxLink{
+    font-size: 20px;
+    font-weight: 600;
+    color: $green;
+    margin-top: 10px;
+    text-decoration: underline;
 }
