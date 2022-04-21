@@ -7,7 +7,7 @@ function Homecards() {
 			<div className="homeCards">
 				<div>
 					<Image
-						src="/../public/img/portugal.jpg"
+						src="/../public/img/maldivene.jpg"
 						height="287px"
 						width="430px"
 						className="homeCards_img"
