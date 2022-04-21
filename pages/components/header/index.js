@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 function HeroHeader() {
-	const Router = useRouter();
+	const router = useRouter();
 	return (
 		<header className="navBar">
 			<div className="logo">
@@ -20,7 +20,7 @@ function HeroHeader() {
 						<Link href="/hotels">
 							<a
 								className={
-									Router.pathname === '/hotels' ? 'active' : 'inactive'
+									router.pathname === '/hotels' ? 'active' : 'inactive'
 								}>
 								Hotels
 							</a>
@@ -28,7 +28,7 @@ function HeroHeader() {
 					</li>
 					<li>
 						<Link href="#">
-							<a className={Router.pathname === '#' ? 'active' : 'inactive'}>
+							<a className={router.pathname === '#' ? 'active' : 'inactive'}>
 								Reviews
 							</a>
 						</Link>
@@ -37,7 +37,7 @@ function HeroHeader() {
 						<Link href="/contact">
 							<a
 								className={
-									Router.pathname === '/contact' ? 'active' : 'inactive'
+									router.pathname === '/contact' ? 'active' : 'inactive'
 								}>
 								Contact
 							</a>
@@ -52,7 +52,7 @@ function HeroHeader() {
 export default HeroHeader();
 
 export function Header() {
-	const Router = useRouter();
+	const router = useRouter();
 	return (
 		<header className="navBar">
 			<div className="logo">
@@ -68,7 +68,7 @@ export function Header() {
 						<Link href="/hotels">
 							<a
 								className={
-									Router.pathname === '/hotels' ? 'active' : 'inactive'
+									router.pathname === '/hotels' ? 'active' : 'inactive'
 								}>
 								Hotels
 							</a>
@@ -76,7 +76,7 @@ export function Header() {
 					</li>
 					<li>
 						<Link href="#">
-							<a className={Router.pathname === '#' ? 'active' : 'inactive'}>
+							<a className={router.pathname === '#' ? 'active' : 'inactive'}>
 								Reviews
 							</a>
 						</Link>
@@ -85,7 +85,7 @@ export function Header() {
 						<Link href="/contact">
 							<a
 								className={
-									Router.pathname === '/contact' ? 'active' : 'inactive'
+									router.pathname === '/contact' ? 'active' : 'inactive'
 								}>
 								Contact
 							</a>
