@@ -12,6 +12,7 @@ function Homecards() {
 						width="430px"
 						className="homeCards_img"
 						alt="picture of the hotel in portugal"
+						property="priority"
 					/>
 				</div>
 				<div className="homeCards_textBox">
