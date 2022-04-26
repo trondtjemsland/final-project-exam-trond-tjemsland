@@ -5,10 +5,10 @@ function Homecards() {
 	return (
 		<div className="homeCardsWrapper">
 			<div className="homeCards">
-				<div>
+				<div className="homeCards_imgBox">
 					<Image
 						src="/img/portugal.jpg"
-						height="287px"
+						height="280px"
 						width="430px"
 						className="homeCards_img"
 						alt="picture of the hotel in portugal"

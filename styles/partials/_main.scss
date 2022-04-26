@@ -17,13 +17,16 @@
 
 .homeCards{
     border-radius: 5px;
-    width:430px ;
-    height: 400px;
+    width:30%;
     background-color: $white;
     margin-bottom: 96px;
 
+    &_imgBox{
+        width: 100%;
+    }
 
     &_img{
+        width: 100%;
         border-radius: 5px 5px 0px 0px;
     }
 
@@ -95,7 +98,6 @@
     &_heading{
         text-align: center;
         color: $text-color;
-
         & h2{
             padding-top: 100px;
             font-size:$h2TextSize;
