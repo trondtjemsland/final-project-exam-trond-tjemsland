@@ -31,8 +31,14 @@ function Hotels() {
 				/>
 			</Head>
 			<Header />
+			<Herobannerhotels />
 			<main>
-				<Herobannerhotels />
+				<div className="hotelsHeading">
+					<h3 className="hotelsHeading_h3">
+						Find the perfect hotel for your destination
+					</h3>
+				</div>
+				<input type="date"></input>
 			</main>
 			<Footer />
 		</div>
