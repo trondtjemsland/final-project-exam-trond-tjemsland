@@ -2,7 +2,7 @@
 
 module.exports = {
 	images: {
-		domains: ['netlify.app'],
+		domains: ['netlify.app', 'preeminent-valkyrie-e01801.netlify.app'],
 	},
 };
 

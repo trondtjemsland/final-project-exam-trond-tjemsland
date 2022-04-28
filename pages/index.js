@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Dazeclub from './components/dazeclub/dazeclub';
+import Dazeclub from './components/Home/dazeclub/dazeclub';
 import Footer from './components/footer/footer';
-import HeroBanner from './components/herobanner_home';
-import Homecards from './components/homecards/homecards';
-import Homeinfo from './components/homeinfo/homeinfo';
+import HeroBanner from './components/Home/herobanner_home';
+import Homecards from './components/Home/homecards/homecards';
+import Homeinfo from './components/Home/homeinfo/homeinfo';
 
 export default function Home() {
 	return (

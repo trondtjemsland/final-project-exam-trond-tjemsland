@@ -3,9 +3,21 @@ import React from 'react';
 import Head from 'next/head';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import Herobannerhotels from './components/herobanner_hotels/herobannerhotels';
+import Herobannerhotels from './components/Hotels/herobanner_hotels/herobannerhotels';
+import HotelSearchbar from './components/Hotels/hotelSearchbar/hotelSearchbar';
+import HotelCards from './components/Hotels/hotelCards/hotelcards';
 
-function Hotels() {
+export const getStaticProps = async () => {
+	const res = await fetch('http://localhost:1337/hotels');
+	const data = await res.json();
+
+	return {
+		props: { hotels: data },
+	};
+};
+
+function Hotels({ hotels }) {
+	console.log(hotels);
 	return (
 		<div>
 			<Head>
@@ -33,12 +45,27 @@ function Hotels() {
 			<Header />
 			<Herobannerhotels />
 			<main>
-				<div className="hotelsHeading">
-					<h3 className="hotelsHeading_h3">
-						Find the perfect hotel for your destination
-					</h3>
+				<div className="hotelsWrapper">
+					<div className="hotelsHeading">
+						<h3 className="hotelsHeading_h3">
+							Find the perfect hotel for your destination
+						</h3>
+					</div>
 				</div>
-				<input type="date"></input>
+				<HotelSearchbar />
+
+				<div className="hotelCards_wrapper">
+					{hotels.map(({ title, price, imageUrl, id, adress }) => (
+						<HotelCards
+							key={id}
+							title={title}
+							price={price}
+							imageUrl={imageUrl}
+							adress={adress}
+							id={id}
+						/>
+					))}
+				</div>
 			</main>
 			<Footer />
 		</div>

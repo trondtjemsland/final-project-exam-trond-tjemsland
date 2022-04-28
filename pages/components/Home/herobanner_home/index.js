@@ -1,6 +1,5 @@
 import React from 'react';
-import Demo from '../datepicker';
-
+import Demo from '../../datepicker';
 import HeroHeader from '../heroheader';
 
 function HeroBanner() {

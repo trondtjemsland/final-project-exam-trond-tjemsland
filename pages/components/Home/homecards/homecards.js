@@ -8,8 +8,9 @@ function Homecards() {
 				<div className="homeCards_imgBox">
 					<Image
 						src="/img/portugal.jpg"
-						height="280px"
-						width="430px"
+						height={280}
+						width={430}
+						layout="responsive"
 						className="homeCards_img"
 						alt="picture of the hotel in portugal"
 						property="priority"
