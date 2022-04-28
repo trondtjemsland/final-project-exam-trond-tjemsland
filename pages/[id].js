@@ -1,3 +1,7 @@
+import Header from './components/header/header';
+import Head from 'next/head';
+import Footer from './components/footer/footer';
+
 export const getStaticPaths = async () => {
 	const res = await fetch('http://localhost:1337/hotels');
 	const data = await res.json();
@@ -24,7 +28,7 @@ export const getStaticProps = async (context) => {
 	};
 };
 
-const Details = ({ hotels: { title, imageUrl, price } }) => {
+const HotelDetails = ({ hotels: { title, imageUrl, price, adress } }) => {
 	return (
 		<>
 			<Head>
@@ -50,8 +54,20 @@ const Details = ({ hotels: { title, imageUrl, price } }) => {
 				/>
 			</Head>
 			<Header />
+			<main>
+				<div className="details_wrapper">
+					<div className="details_header">
+						<div>
+							<h1>{title}</h1>
+							<p>{adress}</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</main>
+			<Footer />
 		</>
 	);
 };
 
-export default Details;
+export default HotelDetails;
