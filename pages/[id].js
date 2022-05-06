@@ -1,6 +1,13 @@
 import Header from './components/header/header';
 import Head from 'next/head';
 import Footer from './components/footer/footer';
+import DetailSlider from './components/Hotels/slider/slider';
+import Image from 'next/image';
+import { Icon } from '@iconify/react';
+import Amenities from './components/Hotels/amenities/amenities';
+import Searchbar from './components/details/detailsSearchbar/searchbar';
+import GuestReviews from './components/details/guestreviews/guestreviews';
+import Activities from './components/details/activities/activities';
 
 export const getStaticPaths = async () => {
 	const res = await fetch('http://localhost:1337/hotels');
@@ -28,7 +35,14 @@ export const getStaticProps = async (context) => {
 	};
 };
 
-const HotelDetails = ({ hotels: { title, imageUrl, price, adress } }) => {
+const HotelDetails = ({
+	hotels: { title, imageUrl, sliderImages, price, adress, mapImg, reviews },
+}) => {
+	console.log('mapimg loader', mapImg);
+	const myLoader = ({ src }) => {
+		return `${mapImg}?w=500&q=75`;
+	};
+
 	return (
 		<>
 			<Head>
@@ -55,15 +69,77 @@ const HotelDetails = ({ hotels: { title, imageUrl, price, adress } }) => {
 			</Head>
 			<Header />
 			<main>
-				<div className="details_wrapper">
+				<div className="details">
 					<div className="details_header">
-						<div>
+						<div className="details_title">
 							<h1>{title}</h1>
 							<p>{adress}</p>
-							<p></p>
+							<div className="priceMatch">
+								<span>
+									<Icon
+										className="priceMatch_icon"
+										icon="fluent:checkmark-starburst-16-filled"
+									/>
+								</span>
+								<p>Pricematch</p>
+							</div>
+						</div>
+						<div className="details_booking">
+							<p className="details_booking_price">
+								${price}
+								<span>/day</span>
+							</p>
+							<button className="details_bookingBtn">Book your Room</button>
+						</div>
+					</div>
+					<div className="details_infoBox">
+						<div className="details_sliderWrapper">
+							<DetailSlider imageUrl={imageUrl} sliderImages={sliderImages} />
+						</div>
+						<div className="details_hotelInfo">
+							<Image
+								loader={myLoader}
+								src={mapImg}
+								layout={'responsive'}
+								width={475}
+								height={210}
+							/>
+							<div className="detailsAdress">
+								<Icon
+									className="detailsAdress_icon"
+									icon="fa-solid:map-marker-alt"
+								/>
+								<p>{adress}</p>
+							</div>
+							<div className="details_ratingContainer">
+								<div className="details_ratingsBox">
+									<p>4.5</p>
+								</div>
+								<div className="details_ratingText">
+									<p className="details_ratingText_heading">Excellent</p>
+									<p className="details_ratingText_small">
+										128+ verified guest reviews
+									</p>
+								</div>
+							</div>
+							<div className="reviewsWrapper">
+								<p>
+									“ The Hotel rooms where just as the images. The reception was
+									very nice and a good experience”
+								</p>
+								<div className="reviewsWrapper_divider"></div>
+								<p>
+									“ The Staff at the hotel was helpfull and really servide
+									minded”
+								</p>
+							</div>
+							<Amenities />
 						</div>
 					</div>
 				</div>
+				<Searchbar />
+				<GuestReviews reviews={reviews} />
+				<Activities />
 			</main>
 			<Footer />
 		</>

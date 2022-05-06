@@ -1,10 +1,11 @@
 .hotelsWrapper{
     width: 95%;
     margin: auto;
+    border: solid 1px red;
+
 }
 
 .hotelsHeading{
-    width: 50%;
     margin-top: 64px;
     &_h3{
         font-size: $h3TextSize;
@@ -16,7 +17,6 @@
 .searchBar_container{
     width: 95%;
     margin: auto;
-    padding: 10px;
 
     & form{
         display: flex;
@@ -25,33 +25,25 @@
 
 }
 
-#search, #date, #text {
-    height: 60px;
-    border-radius:5px ;
-    padding: 10px;
-    font-family: 'Poppins';
-    font-weight: 500;
-    font-size: 18px;
 
-}
 
-#search{
-    width: 430px;
-}
 
-#date {
-    width: 215px;
-}
 
-#text{
-    width: 430px;
-}
+
 
 .input_icons{
 
     & input{
-        height: 40px;
+        height: 60px;
         margin-right: 15px;
+        border-radius:5px ;
+        padding: 10px;
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size:1.125rem;
+        color: #94979D;
+        margin-top: 10px;
+
 
     }
     &_icon{
@@ -90,16 +82,16 @@
 
     &_title{
         font-weight: 700;
-        font-size:20px;
+        font-size:1.5rem;
   
     }
 
     &_price{
-        font-size: 20px;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 5px;
         & span{
-            font-size: 14px;
+            font-size: $smallText;
             color: #94979D;
             font-weight: 500;
         }
@@ -111,7 +103,7 @@
     }
 
     &_adress{
-        font-size: 14px;
+        font-size: $smallText;
     }
 
     &_box1{
@@ -134,4 +126,95 @@
    font-size: 1.25rem;
    margin-top: -1px;
    margin-left: 5px;
+}
+
+
+@media only screen and (max-width: 1416px) {
+    .searchBar_container{
+    
+        & form{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+}
+@media only screen and (max-width: 943px) {
+
+    .hotelCards_wrapper{
+        margin: 36px auto;
+    }
+    .hotelsWrapper{
+        width: 90%;
+        margin: auto;
+        border:1px solid blue;
+    
+    }
+    .input_icons{
+
+        & input{
+        width: 100%;
+    
+    
+        }
+     
+    }
+
+    .hotelsHeading{
+        margin-top: 20px;
+        &_h3{
+            font-size:$headingSmallText;
+            font-weight: 700;
+            color: $text-color;
+        }
+    }
+    .searchBar_container{
+        border: solid red 2px;
+        width: 50%;
+        & form{
+           flex-direction: column;
+           
+        }
+   
+    }
+
+    
+    .hotelsWrapper{
+        width: 50%;
+    
+    
+    }
+}
+@media only screen and (max-width: 843px) {
+
+    .hotelCards_wrapper{
+        margin: 24px auto;
+    }
+    .hotelsWrapper{
+        width: 85%;
+        margin: auto;
+        border:1px solid blue;
+    
+    }
+    .input_icons{
+
+        & input{
+        width: 100%;
+    
+    
+        }
+     
+    }
+
+    .hotelsHeading{
+        &_h3{
+            font-size:$largText;  
+        }
+    }
+    .searchBar_container{
+        width: 90%;
+    }
+
+    
+  
 }

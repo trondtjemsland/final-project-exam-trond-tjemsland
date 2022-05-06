@@ -5,6 +5,15 @@ import HeroBanner from './components/Home/herobanner_home';
 import Homecards from './components/Home/homecards/homecards';
 import Homeinfo from './components/Home/homeinfo/homeinfo';
 
+export const getStaticProps = async () => {
+	const res = await fetch('http://localhost:1337/hotels');
+	const data = await res.json();
+
+	return {
+		props: { hotels: data },
+	};
+};
+
 export default function Home() {
 	return (
 		<>

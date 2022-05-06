@@ -16,7 +16,7 @@ function HotelCards({ imageUrl, title, price, adress, id }) {
 					loader={myLoader}
 					src={imageUrl}
 					width={430}
-					height={287}
+					height={290}
 					layout="responsive"
 				/>
 				<div className="hotelCard_textBox">

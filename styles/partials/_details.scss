@@ -1,0 +1,354 @@
+.details{
+    width: 95%;
+    margin: 64px auto 0;
+    &_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+    }
+    &_title{
+        & h1{
+            font-size:$h3TextSize ;
+            font-weight: 700;
+            color: $text-color;
+        }
+
+        & p{
+            color: $text-color;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+
+    &_booking{
+        display: flex;
+        &_price{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            & span{
+                font-size: 14px;
+                color: #94979D;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    &_hotelInfo{   
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &_bookingBtn{
+        margin-left: 10px;
+        height: 60px;
+        width: 205px;
+        border-radius: 5px;
+        background-color: $primary-button;
+        color: $text-color;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Poppins', Courier, monospace;
+    }
+
+
+    &_sliderWrapper{
+        width: 60%;
+        height: 650px;
+    }
+
+    &_infoBox{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+
+    &_ratingContainer{
+        display: flex;
+        align-items:flex-end;
+
+    }
+
+    &_ratingText{
+        color: $text-color;
+        margin-left: 10px;
+
+        &_heading {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        &_small{
+            font-size: 14px;
+        }
+
+        
+    }
+}
+
+
+.priceMatch{
+    display: flex;
+    align-items: center;
+
+    & p{
+        font-weight: 400;
+        font-size: 16px;
+    }
+    &_icon{
+        height: 30px;
+        width: 30px;
+        color: $green;
+        margin-right: 5px;
+    }
+}
+
+
+.detailsAdress{
+    display: flex;
+    align-items: center;
+
+    &_icon{
+        height: 20px;
+        width: 20px;
+    }
+    
+   & p {
+        margin-left: 10px;
+    }
+}
+
+.details_ratingsBox{
+    margin-top: 15px;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & p{
+        font-weight: 700;
+        font-size:24px;
+    }
+}
+
+.reviewsWrapper{
+    margin-top: 1.125rem;
+    width: 100%;
+    color: $text-color;
+    &_divider{
+        border-bottom: solid  2px $text-color;
+        width: 500px;
+        margin:20px 0  20px 0;
+    }
+}
+
+//Amenities
+.amenities_wrapper{
+    height: 150px;
+    background-color: $white;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;  
+    flex-wrap: wrap;
+    padding: 10px 20px 10px 20px;
+}
+
+.amenities{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 150px;
+    &_icon{
+        margin-right:5px;
+        height:25px;
+        width: 25px;
+        
+    }
+}
+
+
+//Searchbar
+
+.searchBarDetails_wrapper{
+    background-color: $green;
+    height: 175px;
+    margin: 20px 0 40px 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.searchBarDetails_container{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: auto;
+    & form{
+        display: flex;
+    }
+
+
+}
+
+.searchBarBtn_primary{
+    background-color:$primary-button ;
+    margin-right: 10px;
+    width: 205px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $text-color;
+
+}
+.searchBarBtn_secondary{
+    border: solid 3px $primary-button ;
+    width: 205px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: $white;
+}
+.detailsInput {
+    height: 60px;
+    border-radius:5px ;
+    padding: 10px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size:1.125rem;
+    color: #94979D;
+
+}
+
+
+
+
+
+
+
+
+.guestReviewContainer{
+    width: 95%;
+    margin: auto;
+
+    &__title{
+        width: 95%;
+        margin:auto; 
+
+        & h3{
+            color: $text-color;
+            font-weight: 500;
+            font-size:2.20rem;
+        }
+    }
+}
+
+
+//GuestReview
+
+.guestReview{
+    &__wrapper{ 
+        display: flex;
+        width: 95%;
+        margin: auto;
+        flex-direction: row;
+    }
+
+    
+
+    &__card{
+        background-color: $white;
+        padding: 10px 10px 5px 10px;
+        margin-right: 25px;
+        border-radius: 5px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        & img{
+            margin-right: 10px;
+        }
+
+        &__moreReviews{
+            padding-top: 10px;
+        }
+    }
+
+    &__top{
+        display: flex;
+        align-items: center;
+
+        & h4{
+            font-weight: 700;
+            font-size:1.125rem;
+        }
+
+        & p{
+            font-size: $smallText;
+            font-weight: 600;
+        }
+    }
+
+    // &_textBox{
+        
+    // }
+
+    &__text{
+        margin-top:10px;
+        font-size: $smallText;
+    }
+   &__moreReviews{
+    margin-top:10px;
+    font-size: $smallText;
+   }
+}
+
+
+//Activities
+
+.activities_Wrapper{
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    width: 95%;
+    margin:80px auto 80px 0;
+
+}
+
+
+
+.activities_box1, .activities_box2, .activities_box3, .activities_middleBox{
+    position: relative;
+
+}
+
+.activities_box2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+  
+
+.activities_textBox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) -9.7%, #000000 100%);
+    width: 100%;
+    height: 80px;
+
+    & p {
+        color: $white;
+        font-size:2.125rem;
+        font-weight: 600;
+    }
+}

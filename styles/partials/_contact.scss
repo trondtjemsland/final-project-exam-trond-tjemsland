@@ -1,0 +1,84 @@
+
+.contact_wrapper{
+    width: 80%;
+    margin: 80px auto;
+    display: flex;
+
+}
+
+
+
+.contact_ImgContainer{
+    width: 530px;
+    position: relative;
+    background-color: $green;
+
+    & h1{
+        color: $white;
+        font-size: $headingLarge;
+        text-transform: uppercase;
+        font-family: 'Poppins';
+        font-weight: 700;
+        text-align: center;
+        padding: 30px;
+    }
+}
+
+
+.contact_headingBox{
+    text-align: center;
+
+    & h2{
+        color: $text-color;
+        font-weight: 700;
+        font-size: $headingSmallText;
+    }
+    & h3{
+        font-weight: 600;
+        color: $background_color;
+        font-size: 1.5rem;
+    }
+}
+
+.contact_formContainer{
+    background-color: $white;
+    width: 530px;
+    padding: 40px;
+
+   
+}
+
+.contactForm{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+}
+
+.inputField
+{
+    height: 60px;
+    width:100%;
+    background-color: $background_color;
+    border-radius: 2px;
+    padding: 10px;
+    margin-top:20px;
+}
+
+.textareaInput{
+    height: 200px;
+    width:100%;
+    background-color: $background_color;
+    border-radius: 2px;
+    margin-top:20px;
+}
+
+.contactBtn{
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: 'Poppins', 'Arial Narrow', Arial, sans-serif;
+    height: 60px;
+    width: 60%;
+    margin-top: 20px;
+    background-color: $primary-button;
+    border-radius: 5px;
+}

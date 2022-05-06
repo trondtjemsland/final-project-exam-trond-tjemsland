@@ -153,8 +153,7 @@
 .club{
         &_wrapper{
         display: flex;
-        width: 90%;
-        height: 410px;
+        width: 95%;
         background-color: $white;
         margin: auto;
         border-radius: 20px;
@@ -162,8 +161,7 @@
     }
 
     &_textBoxWrapper{
-        margin-top: 56px;
-        margin-left: 80px;
+        padding:56px 0 0  80px;
         & h2 {
             font-size: $h2TextSize;
             font-weight: 600;
@@ -172,7 +170,6 @@
 
         & input{
             height: 60px;
-            width: 100%;
             padding: 10px;
             font-weight: 500;
             font-family: 'Poppins';

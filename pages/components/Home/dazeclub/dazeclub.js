@@ -5,12 +5,11 @@ function Dazeclub() {
 	return (
 		<div className="club_wrapper">
 			<Image
-				property="priority"
 				className="club_imageWrapper_img"
 				src="/img/dazeclub.png"
-				width="525px"
-				height="408px"
-				alt="Lady sunbathing"
+				width={525}
+				height={408}
+				alt="Lady sunbathing on orange towel"
 			/>
 			<div className="club_textBoxWrapper">
 				<h2>Join our DazeClub</h2>
