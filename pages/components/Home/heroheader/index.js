@@ -1,52 +1,65 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 
-function HeroHeader() {
-	const router = useRouter();
+import { useState } from 'react';
+
+export const NavbarHero = () => {
+	const [active, setActive] = useState(false);
+
+	const handleClick = () => {
+		setActive(!active);
+	};
+
 	return (
-		<header className="navBarHero">
-			<div className="logo">
+		<>
+			<nav className="navBarHero  flex items-center flex-wrap p-4 ">
 				<Link href="/">
-					<a>
-						<Image src="/logo4.svg" width="340px" height="140px" alt="logo" />
+					<a className="inline-flex items-center p-2 ">
+						<Image src="/logo4.svg" width="300px" height="140px" alt="logo" />
 					</a>
 				</Link>
-			</div>
-			<nav>
-				<ul className="navlinks">
-					<li>
+				<button
+					className=" inline-flex p-3 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
+					onClick={handleClick}>
+					<svg
+						className="w-9 h-9"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth={2}
+							d="M4 6h16M4 12h16M4 18h16"
+						/>
+					</svg>
+				</button>
+
+				<div
+					className={`${
+						active ? '' : 'hidden'
+					}   w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
+					<div className=" Header__Nav lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
 						<Link href="/hotels">
-							<a
-								className={
-									router.pathname === '/hotels' ? 'active' : 'inactive'
-								}>
+							<a className=" navBarLinks lg:inline-flex lg:w-auto w-auto px-3 py-2 rounded items-center justify-center">
 								Hotels
 							</a>
 						</Link>
-					</li>
-					<li>
-						<Link href="#">
-							<a className={router.pathname === '#' ? 'active' : 'inactive'}>
-								Reviews
-							</a>
-						</Link>
-					</li>
-					<li>
 						<Link href="/contact">
-							<a
-								className={
-									router.pathname === '/contact' ? 'active' : 'inactive'
-								}>
+							<a className=" navBarLinks lg:inline-flex lg:w-auto w-auto px-3 py-2 rounded items-center justify-center ">
 								Contact
 							</a>
 						</Link>
-					</li>
-				</ul>
+						<Link href="#">
+							<a className=" navBarLinks lg:inline-flex lg:w-auto w-auto px-3 py-2 rounded items-center justify-center">
+								Reviews
+							</a>
+						</Link>
+					</div>
+				</div>
 			</nav>
-		</header>
+		</>
 	);
-}
-
-export default HeroHeader;
+};

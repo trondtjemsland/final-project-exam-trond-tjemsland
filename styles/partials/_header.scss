@@ -6,12 +6,9 @@
     padding: 10px;
     z-index: 10;
 }
-.logo{
-    width: 360px;
-}
-nav {
-	display: flex;
-	justify-content: flex-end;
+
+.navBarLinks{
+    color: $white;
 }
 
 .active {
@@ -27,37 +24,18 @@ nav {
         border-top: solid 3px $white;
     }
 }
-.navlinks{
-    color: $white;
-    font-family: 'Poppins';
-    font-size: 1.35rem;
-    // text-transform:uppercase;
-    font-weight: 600;
-}
 
-nav ul {
-	display: flex;
-	text-decoration: none;
-	list-style: none;
-    align-items: flex-end;
-    padding: 10px;
-    color: $white;
-}
 
-nav li {
-
-    margin-left:40px;
-
-	
-}
-
-//Regular Header
-
-.navBar{
-    height: 140px;
-    background:$green;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    z-index: 10;
+.Header {
+    background-color: $green;
+    
+    &__Nav a {
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 700;
+    margin-left: 30px;
+    font-size:1.125rem;
+    letter-spacing: 1px;
+  
+      
+    }
 }

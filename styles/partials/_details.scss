@@ -19,6 +19,12 @@
             font-weight: 500;
             font-size: 16px;
         }
+        @media only screen and (max-width: 946px) {
+ 
+            & h1{
+                font-size:2rem;
+            }
+        }
     }
 
     &_booking{
@@ -40,6 +46,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 40%;
     }
 
     &_bookingBtn{
@@ -150,7 +157,6 @@
 
 //Amenities
 .amenities_wrapper{
-    height: 150px;
     background-color: $white;
     width: 100%;
     border-radius: 5px;
@@ -223,7 +229,6 @@
     font-weight: 500;
     font-size:1.125rem;
     color: #94979D;
-
 }
 
 
@@ -352,3 +357,59 @@
         font-weight: 600;
     }
 }
+
+
+
+
+
+//MEDIAQuery
+@media only screen and (max-width: 1310px) {
+ 
+    .details{
+
+        &_header{
+            margin:auto;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+    
+        &_infoBox{
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: center;
+
+            row-gap: 20px;
+        }
+
+        &_sliderWrapper{
+            width: 90%;
+        }
+        &_hotelInfo{  
+            width: 90%;
+        }
+    }
+
+
+
+
+    .amenities{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        &_icon{
+            margin-right:5px;
+            height:20px;
+            width: 20px;
+            
+        }
+    }
+
+    .guestReview__wrapper {
+        // flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
+ 
+}
+
+

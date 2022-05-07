@@ -1,11 +1,12 @@
 import React from 'react';
 
 import Head from 'next/head';
-import Header from './components/header/header';
+
 import Footer from './components/footer/footer';
 import Herobannerhotels from './components/Hotels/herobanner_hotels/herobannerhotels';
 import HotelSearchbar from './components/Hotels/hotelSearchbar/hotelSearchbar';
 import HotelCards from './components/Hotels/hotelCards/hotelcards';
+import { Navbar } from './components/header/header';
 
 export const getStaticProps = async () => {
 	const res = await fetch('http://localhost:1337/hotels');
@@ -42,7 +43,7 @@ function Hotels({ hotels }) {
 					href="/favicon-16x16.png"
 				/>
 			</Head>
-			<Header />
+			<Navbar />
 			<Herobannerhotels />
 			<main>
 				<div className="hotelsWrapper">

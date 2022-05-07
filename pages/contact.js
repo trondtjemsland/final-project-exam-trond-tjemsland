@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Footer from './components/footer/footer';
-import Header from './components/header/header';
+import { Navbar } from './components/header/header';
 import Image from 'next/image';
 
 import React from 'react';
@@ -48,7 +48,7 @@ export default function Home() {
 					href="/favicon-16x16.png"
 				/>
 			</Head>
-			<Header />
+			<Navbar />
 			<main>
 				<div className="contact_wrapper">
 					<div className="contact_ImgContainer">
@@ -107,6 +107,7 @@ export default function Home() {
 									<Field
 										type="textarea"
 										name="textarea"
+										component="textarea"
 										placeholder="Enter your message here"
 										className="textareaInput"
 									/>

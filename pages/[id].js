@@ -1,4 +1,4 @@
-import Header from './components/header/header';
+import { Navbar } from './components/header/header';
 import Head from 'next/head';
 import Footer from './components/footer/footer';
 import DetailSlider from './components/Hotels/slider/slider';
@@ -67,7 +67,7 @@ const HotelDetails = ({
 					href="/favicon-16x16.png"
 				/>
 			</Head>
-			<Header />
+			<Navbar />
 			<main>
 				<div className="details">
 					<div className="details_header">
@@ -101,7 +101,7 @@ const HotelDetails = ({
 								loader={myLoader}
 								src={mapImg}
 								layout={'responsive'}
-								width={475}
+								width={420}
 								height={210}
 							/>
 							<div className="detailsAdress">

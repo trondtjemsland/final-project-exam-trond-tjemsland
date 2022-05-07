@@ -3,13 +3,14 @@
     width: 80%;
     margin: 80px auto;
     display: flex;
+    justify-content: center;
 
 }
 
 
 
 .contact_ImgContainer{
-    width: 530px;
+    width: 50%;
     position: relative;
     background-color: $green;
 
@@ -42,7 +43,6 @@
 
 .contact_formContainer{
     background-color: $white;
-    width: 530px;
     padding: 40px;
 
    
@@ -66,6 +66,7 @@
 
 .textareaInput{
     height: 200px;
+    padding: 10px;
     width:100%;
     background-color: $background_color;
     border-radius: 2px;
@@ -81,4 +82,21 @@
     margin-top: 20px;
     background-color: $primary-button;
     border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 1220px) {
+ 
+    .contact_wrapper{
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .contact_ImgContainer{
+        width: 100%;
+        & h1{
+            font-size: $h3TextSize;
+        }
+    }
 }
