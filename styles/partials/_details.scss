@@ -84,6 +84,8 @@
         @media only screen and (max-width: 946px) {
             margin-top: 20px;
             height: none;
+            width: 80%;
+            margin: auto;
         }
     }
 
@@ -400,6 +402,16 @@
 @media only screen and (max-width: 1124px) {
  
     .details{
+        &_sliderWrapper{
+            width: 80%;
+            margin: auto;
+        }
+
+        &_infoBox{
+            flex-direction: column;
+        }
+        
+
 
         &_header{
             margin:auto;
@@ -407,7 +419,8 @@
         }
 
         &_hotelInfo{  
-            width: 40%;
+            width: 80%;
+            margin: auto;
         }
         &_sliderWrapper {
             width: 60%;
