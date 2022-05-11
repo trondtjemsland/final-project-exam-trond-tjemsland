@@ -1,12 +1,24 @@
+
 .details{
     width: 95%;
     margin: 64px auto 0;
+
     &_header{
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 48px;
+        @media only screen and (max-width: 946px) {
+            display: block;
+
+    
+        }
     }
+    &_priceMatch{
+        display: flex;
+        align-items: center;
+    }
+
     &_title{
         & h1{
             font-size:$h3TextSize ;
@@ -22,13 +34,17 @@
         @media only screen and (max-width: 946px) {
  
             & h1{
-                font-size:2rem;
+                font-size:2.225rem;
             }
         }
     }
 
     &_booking{
         display: flex;
+        @media only screen and (max-width: 946px) {
+            margin-top: 20px;
+        
+        }
         &_price{
             font-size: 20px;
             font-weight: bold;
@@ -64,7 +80,11 @@
 
     &_sliderWrapper{
         width: 60%;
-        height: 650px;
+        max-height: 650px;
+        @media only screen and (max-width: 946px) {
+            margin-top: 20px;
+            height: none;
+        }
     }
 
     &_infoBox{
@@ -95,7 +115,6 @@
         
     }
 }
-
 
 .priceMatch{
     display: flex;
@@ -150,7 +169,6 @@
     color: $text-color;
     &_divider{
         border-bottom: solid  2px $text-color;
-        width: 500px;
         margin:20px 0  20px 0;
     }
 }
@@ -162,7 +180,6 @@
     border-radius: 5px;
     display: flex;  
     flex-wrap: wrap;
-    padding: 10px 20px 10px 20px;
 }
 
 .amenities{
@@ -183,28 +200,34 @@
 
 .searchBarDetails_wrapper{
     background-color: $green;
-    height: 175px;
-    margin: 20px 0 40px 0;
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin:48px 0;
 
 }
 
-.searchBarDetails_container{
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin: auto;
-    & form{
+
+
+.detailsFormContainer {
+        padding: 30px 0;
         display: flex;
-    }
+        justify-content: center;
+        @media only screen and (max-width: 1120px) {
+            flex-direction: column;
+            width: 80%;
+        }
 
+}
 
+.buttonFormContainer{
+    display: flex;
+    justify-content: flex-start;
 }
 
 .searchBarBtn_primary{
     background-color:$primary-button ;
+    height: 60px;
     margin-right: 10px;
     width: 205px;
     border-radius: 5px;
@@ -214,6 +237,7 @@
 
 }
 .searchBarBtn_secondary{
+    height: 60px;
     border: solid 3px $primary-button ;
     width: 205px;
     border-radius: 5px;
@@ -222,13 +246,21 @@
     color: $white;
 }
 .detailsInput {
-    height: 60px;
-    border-radius:5px ;
-    padding: 10px;
-    font-family: 'Poppins';
-    font-weight: 500;
-    font-size:1.125rem;
-    color: #94979D;
+    & input{
+        margin-right: 10px;
+        height: 60px;
+        border-radius:5px ;
+        padding: 10px;
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size:1.125rem;
+        color: #94979D;
+        @media only screen and (max-width: 1120px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+    }
+   
 }
 
 
@@ -260,9 +292,11 @@
 .guestReview{
     &__wrapper{ 
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         width: 95%;
         margin: auto;
-        flex-direction: row;
+
     }
 
     
@@ -270,9 +304,9 @@
     &__card{
         background-color: $white;
         padding: 10px 10px 5px 10px;
-        margin-right: 25px;
+        margin-right: 20px;
         border-radius: 5px;
-        width: 300px;
+        max-width: 300px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -363,39 +397,31 @@
 
 
 //MEDIAQuery
-@media only screen and (max-width: 1310px) {
+@media only screen and (max-width: 1124px) {
  
     .details{
 
         &_header{
             margin:auto;
-            width: 90%;
             margin-bottom: 20px;
         }
-    
-        &_infoBox{
-            display: flex;
-            flex-wrap:wrap;
-            justify-content: center;
 
-            row-gap: 20px;
-        }
-
-        &_sliderWrapper{
-            width: 90%;
-        }
         &_hotelInfo{  
-            width: 90%;
+            width: 40%;
+        }
+        &_sliderWrapper {
+            width: 60%;
+            height:none;
         }
     }
 
-
-
-
+    .amenities_wrapper {
+        padding: none;
+    }
+  
     .amenities{
         display: flex;
         align-items: center;
-        padding: 10px;
         &_icon{
             margin-right:5px;
             height:20px;
@@ -403,6 +429,7 @@
             
         }
     }
+
 
     .guestReview__wrapper {
         // flex-wrap: wrap;

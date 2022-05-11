@@ -74,7 +74,7 @@ const HotelDetails = ({
 						<div className="details_title">
 							<h1>{title}</h1>
 							<p>{adress}</p>
-							<div className="priceMatch">
+							<div className="details_priceMatch">
 								<span>
 									<Icon
 										className="priceMatch_icon"
@@ -97,42 +97,50 @@ const HotelDetails = ({
 							<DetailSlider imageUrl={imageUrl} sliderImages={sliderImages} />
 						</div>
 						<div className="details_hotelInfo">
-							<Image
-								loader={myLoader}
-								src={mapImg}
-								layout={'responsive'}
-								width={420}
-								height={210}
-							/>
-							<div className="detailsAdress">
-								<Icon
-									className="detailsAdress_icon"
-									icon="fa-solid:map-marker-alt"
+							<div className="mapContainer">
+								<Image
+									loader={myLoader}
+									src={mapImg}
+									layout={'responsive'}
+									width={420}
+									height={210}
+									alt={
+										'Destination of the hotel Boulevard 77500 Cancun, Mexico'
+									}
 								/>
-								<p>{adress}</p>
-							</div>
-							<div className="details_ratingContainer">
-								<div className="details_ratingsBox">
-									<p>4.5</p>
+								<div className="detailsAdress">
+									<Icon
+										className="detailsAdress_icon"
+										icon="fa-solid:map-marker-alt"
+									/>
+									<p>{adress}</p>
 								</div>
-								<div className="details_ratingText">
-									<p className="details_ratingText_heading">Excellent</p>
-									<p className="details_ratingText_small">
-										128+ verified guest reviews
+							</div>
+							<div>
+								<div className="details_ratingContainer">
+									<div className="details_ratingsBox">
+										<p>4.5</p>
+									</div>
+									<div className="details_ratingText">
+										<p className="details_ratingText_heading">Excellent</p>
+										<p className="details_ratingText_small">
+											128+ verified guest reviews
+										</p>
+									</div>
+								</div>
+								<div className="reviewsWrapper">
+									<p>
+										“ The Hotel rooms where just as the images. The reception
+										was very nice and a good experience”
+									</p>
+									<div className="reviewsWrapper_divider"></div>
+									<p>
+										“ The Staff at the hotel was helpfull and really servide
+										minded”
 									</p>
 								</div>
 							</div>
-							<div className="reviewsWrapper">
-								<p>
-									“ The Hotel rooms where just as the images. The reception was
-									very nice and a good experience”
-								</p>
-								<div className="reviewsWrapper_divider"></div>
-								<p>
-									“ The Staff at the hotel was helpfull and really servide
-									minded”
-								</p>
-							</div>
+
 							<Amenities />
 						</div>
 					</div>

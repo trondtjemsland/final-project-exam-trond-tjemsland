@@ -53,9 +53,8 @@ function Hotels({ hotels }) {
 						</h3>
 					</div>
 				</div>
-
+				<HotelSearchbar hotelsArray={hotels} />
 				<div className="hotelCards_wrapper">
-					<HotelSearchbar />
 					{hotels.map(({ title, price, imageUrl, id, adress }) => (
 						<HotelCards
 							key={id}

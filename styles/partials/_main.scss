@@ -2,11 +2,20 @@
 &_wrapper{
     width: 65%;
     padding: 48px 0px 48px 54px;
+    @media only screen and (max-width: 680px) {
+        width: 100%;
+       
+        padding: 15px;
+    }
 }
 &_heading{
     font-size: $h3TextSize;
     font-weight: 700;
     color: $text-color;
+    @media only screen and (max-width: 680px) {
+        
+        font-size: 2.125rem;
+    }
 }
 }
 
@@ -89,7 +98,7 @@
     &_wrapper{
         margin: auto;
         width:95%; 
-        padding-bottom: 100px;
+        padding: 48px;
         background-color: $white;
         border-radius: 20px;
         margin-bottom: 80px;
@@ -99,18 +108,28 @@
         text-align: center;
         color: $text-color;
         & h2{
-            padding-top: 100px;
             font-size:$h2TextSize;
             font-weight: 600;
+            @media only screen and (max-width: 680px) {
+                font-size: $h3TextSize;
+            }
         }
     }
 
     &_iconContainer{
         display: flex;
         flex-wrap: wrap;
-        margin: auto;
+        align-items: center;
         justify-content: center;
+        @media only screen and (max-width: 990px) {
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    
     }
+
+    
 
 
 }
@@ -120,6 +139,10 @@
     align-items: center;
     margin-right: 100px;
     margin-top:100px;
+    @media only screen and (max-width: 680px) {
+        margin-right: 24px;
+        margin-top:24px;
+    }
 }
 
 .iconBox{
@@ -131,11 +154,19 @@
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+    @media only screen and (max-width: 680px) {
+     height: 60px;
+     width: 60px;
+    }
 
     &_icon{
         font-size: 60px;
         color: $text-color;
+        @media only screen and (max-width: 680px) {
+         font-size: 30px;
+        }
     }
+    
 
     &_heading{
         font-size: 20px;
@@ -158,17 +189,23 @@
         margin: auto;
         border-radius: 20px;
         margin-bottom: 80px;
+       
     }
 
     &_textBoxWrapper{
-        padding:56px 0 0  80px;
+        
+        padding:20px;
         & h2 {
             font-size: $h2TextSize;
             font-weight: 600;
             color: $text-color;
+            @media only screen and (max-width: 1235px) {
+               font-size:3.225rem;
+            }
         }
 
         & input{
+            width: 100%;
             height: 60px;
             padding: 10px;
             font-weight: 500;
@@ -179,7 +216,9 @@
     }
 
 
+
     &_imageWrapper{
+        display: none;
        &_img{
         border-radius:20px 0px 0px 20px;
        }
@@ -188,6 +227,9 @@
     &_textBox{
         display: flex;
         justify-content: space-between;
+        @media only screen and (max-width: 1235px) {
+            flex-direction: column;
+         }
     }
 
     &_textBoxContainer{
@@ -209,12 +251,13 @@
     &_btnBox{
         display: flex;
         align-items: flex-end;
+        margin-top: 10px;
     }
 
     &_btn{
         height: 60px;
         width: 144px;
-        border-radius: 10px;
+        border-radius: 5px;
         background-color:$primary-button;
         font-size:20px ;
         font-weight: 600;

@@ -19,6 +19,21 @@ export default function DetailSlider({
 	const myLoader = ({ src }) => {
 		return imageUrl;
 	};
+	const myLoader1 = ({ src }) => {
+		return sliderImg1;
+	};
+	const myLoader2 = ({ src }) => {
+		return sliderImg2;
+	};
+	const myLoader3 = ({ src }) => {
+		return sliderImg3;
+	};
+	const myLoader4 = ({ src }) => {
+		return sliderImg4;
+	};
+	const myLoader5 = ({ src }) => {
+		return sliderImg5;
+	};
 
 	return (
 		<>
@@ -37,19 +52,19 @@ export default function DetailSlider({
 					<Image loader={myLoader} src={imageUrl} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image loader={myLoader} src={sliderImg1} height={650} width={800} />
+					<Image loader={myLoader1} src={sliderImg1} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg2} />
+					<Image loader={myLoader2} src={sliderImg2} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg3} />
+					<Image loader={myLoader3} src={sliderImg3} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg4} />
+					<Image loader={myLoader4} src={sliderImg4} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg5} />
+					<Image loader={myLoader5} src={sliderImg5} height={650} width={800} />
 				</SwiperSlide>
 			</Swiper>
 			<Swiper
@@ -60,16 +75,16 @@ export default function DetailSlider({
 				modules={[FreeMode, Navigation, Thumbs]}
 				className="mySwiper">
 				<SwiperSlide>
-					<img src={sliderImg1} />
+					<Image loader={myLoader1} src={sliderImg1} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg2} />
+					<Image loader={myLoader2} src={sliderImg2} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg3} />
+					<Image loader={myLoader3} src={sliderImg3} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg4} />
+					<Image loader={myLoader4} src={sliderImg4} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
 					<img src={sliderImg5} />

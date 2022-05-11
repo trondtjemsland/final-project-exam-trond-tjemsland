@@ -11,6 +11,7 @@ function Dazeclub() {
 				height={408}
 				alt="Lady sunbathing on orange towel"
 			/>
+
 			<div className="club_textBoxWrapper">
 				<h2>Join our DazeClub</h2>
 				<input placeholder="Enter your email..."></input>

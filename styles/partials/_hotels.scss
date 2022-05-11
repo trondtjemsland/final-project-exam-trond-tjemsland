@@ -1,12 +1,13 @@
 .hotelsWrapper{
     width: 95%;
     margin: auto;
-    border: solid 1px red;
 
 }
 
 .hotelsHeading{
-    margin-top: 64px;
+    margin: 40px auto 20px;
+    width: 95%;
+    
     &_h3{
         font-size: $h3TextSize;
         font-weight: 700;
@@ -15,43 +16,63 @@
 }
 
 .searchBar_container{
+    display: flex;
     width: 95%;
     margin: auto;
-
-    & form{
-        display: flex;
-    }
-
-
 }
 
-
-
-
-
-
-
-.input_icons{
-
+.input_container{
+    margin-right: 10px;
+   
     & input{
-        height: 60px;
-        margin-right: 15px;
+        min-height: 60px;
         border-radius:5px ;
         padding: 10px;
         font-family: 'Poppins';
         font-weight: 500;
         font-size:1.125rem;
         color: #94979D;
-        margin-top: 10px;
+    
+    }
+    & select{
+        min-width: 120px;
+        min-height: 60px;
+        border-radius:5px ;
+        padding:10px;
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size:1.125rem;
+        color: #94979D;
+        margin-bottom: 10px;
+    }
+}
+.css-1s2u09g-control{
+    height: 60px;
+    border: none !important;
+ 
+}
+
+.typeAhead{
+    width: 100% !important;
+    min-width: 220px !important;
+}
+.css-6j8wv5-Input{
+    margin:0 !important;
+    padding-top:0 !important;
+    padding-bottom: 0 !important;
+}
 
 
-    }
-    &_icon{
-        position: absolute;
-        color:$text-color;
-        text-align: center;
-        margin-bottom:10px;
-    }
+
+.searchBtn{
+    height: 60px;
+    width:120px;
+    border-radius: 5px;
+    background-color: $primary-button;
+    color: $text-color;
+    font-size:1.25rem;
+    font-weight: bold;
+    font-family: 'Poppins', Courier, monospace;
 }
 
 .hotelCards_wrapper{
@@ -131,15 +152,13 @@
 
 @media only screen and (max-width: 1416px) {
     .searchBar_container{
-    
-        & form{
             display: flex;
             justify-content: center;
-        }
+        
     }
 
 }
-@media only screen and (max-width: 943px) {
+@media only screen and (max-width: 990px) {
 
     .hotelCards_wrapper{
         margin: 36px auto;
@@ -147,18 +166,26 @@
     .hotelsWrapper{
         width: 90%;
         margin: auto;
-        border:1px solid blue;
-    
     }
-    .input_icons{
+    .searchBar_container{
+        width: 60%;
+        display: flex;
+        flex-direction: column;   
+    }
 
+    .typeAhead{
+        margin-bottom:10px;
+    }
+
+    .input_container{
+      
         & input{
-        width: 100%;
-    
-    
+            width: 100%;
+            margin-bottom: 10px;
         }
      
     }
+   
 
     .hotelsHeading{
         margin-top: 20px;
@@ -168,35 +195,27 @@
             color: $text-color;
         }
     }
-    .searchBar_container{
-        border: solid red 2px;
-        width: 50%;
-        & form{
-           flex-direction: column;
-           
-        }
-   
-    }
+
 
     
     .hotelsWrapper{
-        width: 50%;
-    
-    
+        width: 70%;
     }
 }
 @media only screen and (max-width: 843px) {
 
+    .heroBanner_wrapper{
+        display: none;
+    }
     .hotelCards_wrapper{
         margin: 24px auto;
     }
     .hotelsWrapper{
-        width: 85%;
+
         margin: auto;
-        border:1px solid blue;
     
     }
-    .input_icons{
+    .input_container{
 
         & input{
         width: 100%;
@@ -208,13 +227,17 @@
 
     .hotelsHeading{
         &_h3{
-            font-size:$largText;  
+            font-size:2rem;  
         }
     }
     .searchBar_container{
-        width: 90%;
+        display: flex;
+        flex-direction: column;    
     }
+}
 
-    
-  
+@media only screen and (max-width: 643px) {
+    .searchBar_container{
+      width: 90%;  
+    }
 }

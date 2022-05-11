@@ -5,7 +5,7 @@
     background-size: cover;
 
     &_textBox{
-        width: 50%;
+        max-width: 800px;
         padding:60px 0px 0px 60px;
     }
 
@@ -15,7 +15,16 @@
         font-family: 'Poppins';
         font-weight:700;
         font-size: $heroText;
-        text-transform: uppercase
+        text-transform: uppercase;
+        @media only screen and (max-width: 990px) {
+          font-size: 5rem;
+          max-width: 600px;
+        }
+        @media only screen and (max-width: 680px) {
+            font-size: 3.250rem;
+            max-width: 400px;
+
+        }
     }
 
     &_searchBar{
@@ -36,3 +45,6 @@
         border-radius: 10px;
     }
 }
+
+
+
