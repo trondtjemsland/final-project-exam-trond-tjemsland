@@ -1,0 +1,48 @@
+.adminmodal_wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(19, 21, 21, 0.66);
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    
+}
+  .adminmodal {
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50%;
+    height: 600px;
+    background:$white;
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    display: flex;
+
+    &_container{
+        width: 70%;
+        margin: auto;  
+    }
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginBtn{
+    height: 50px;
+    background-color: $primary-button;
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 700;
+    font-size: 1.225rem;
+    color: $text-color;
+}
+
+.loginInputField{
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,45 @@
+.adminWrapper{
+    width: 95%;
+    margin: auto;
+    
+    &_tableBox{
+        margin-bottom: 48px;
+    }
+
+}
+
+.logoutWrapper{
+    margin-top: 48px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_headingWrapper{
+        & h1{
+            font-size: $headingSmallText;
+            font-weight: 600;
+        }
+    }
+}
+
+.logoutBtn {
+    height: 60px;
+    border-radius: 2px;
+    width: 100px;
+    background-color:$primary-button;
+    font-size: 1.225rem;
+    font-weight: 600;
+    font-family: 'Poppins', Courier, monospace;
+}
+
+.addBtn{
+    height: 60px;
+    border-radius: 2px;
+    width: 140px;
+    background-color:$primary-button;
+    font-size: 1.225rem;
+    font-weight: 600;
+    font-family: 'Poppins', Courier, monospace;
+    margin-top: 24px;
+}

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
+import AdminModal from '../admin/adminmodal/adminmodal';
 
 function Footer() {
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<div className="footer_wrapper">
 			<div className="footer_box1">
@@ -13,11 +16,10 @@ function Footer() {
 				<div className="footer_links">
 					<a>Faq</a>
 					<Link href="/contact">
-						<a className="footerlinks">Conctact</a>
+						<a className="footerlinks">Contact</a>
 					</Link>
-					<Link href="/admin">
-						<a className="footerlinks">Admin</a>
-					</Link>
+					<p onClick={() => setIsOpen(true)}>Admin</p>
+					{isOpen && <AdminModal setIsOpen={setIsOpen} />}
 				</div>
 				<div className="footer_icons">
 					<Icon className="footer_icons_icon" icon="fa6-brands:instagram" />

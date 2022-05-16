@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 // Iconify
 
 const GuestReviews = ({ reviews }) => {
-	console.log(reviews);
 	return (
 		<div className="guestReviewContainer">
 			<div className="guestReviewContainer__title">

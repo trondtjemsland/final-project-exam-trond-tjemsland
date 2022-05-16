@@ -23,6 +23,15 @@
             font-size: 20px;
             color:$white;
         }
+
+        & p {
+            margin-right: 30px;
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 20px;
+            color:$white;
+            cursor: pointer;
+        }
     }
 
     &_icons{

@@ -61,7 +61,7 @@ export default function Home() {
 					</div>
 					<div className="contact_formContainer">
 						<div className="contact_headingBox">
-							<h3>Contact form</h3>
+							<h1>Contact form</h1>
 							<h2>Lets get in touch</h2>
 						</div>
 

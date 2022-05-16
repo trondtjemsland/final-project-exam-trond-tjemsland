@@ -1,5 +1,5 @@
 .navBarHero{
-    height: 120px;
+    height: 140px;
     background: rgba(0, 100, 98, 0.5);
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@
 
 .Header {
     background-color: $green;
-    
+
     &__Nav a {
     font-family: 'Poppins', Courier, monospace;
     font-weight: 700;
@@ -36,6 +36,5 @@
     font-size:1.125rem;
     letter-spacing: 1px;
   
-      
     }
 }

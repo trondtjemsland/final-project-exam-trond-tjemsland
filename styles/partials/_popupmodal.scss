@@ -1,0 +1,130 @@
+.modal_wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(19, 21, 21, 0.66);
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    
+}
+  .modal {
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 80%;
+    height: 600px;
+    background:$white;
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    display: flex;
+
+    &_boxLeft{
+        background-color: $green;
+        width: 60%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    &_boxRight{
+      width: 40%;
+      border-radius: 10px 0 0 10px;
+  }
+
+    &__close-btn {
+        cursor: pointer;
+        transition: all 0.25s ease;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-self: flex-end;
+        margin-top: -1px;
+        margin-right: -1px;
+      } 
+
+  }
+
+
+  .thankuWrapper{
+    width: 90%;
+    margin: auto;
+    &_heading{
+      margin-top: 64px;
+      font-size:1.75rem;
+      font-weight: 600;
+    }
+  }
+
+
+  .payment{
+    &_heading{
+      color: $text-color;
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+  }
+
+  .paymentForm{
+
+  & label{
+    padding-bottom: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $text-color;
+  }
+  }
+
+  .paymentBtn{
+    height: 50px;
+    background-color: $primary-button;
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 700;
+    font-size: 1.225rem;
+    color: $text-color;
+  }
+
+  .paymentInputField{
+    height: 50px;
+    padding: 10px;
+    font-size: .975rem;
+    text-transform: uppercase;
+    background-color: $background_color;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    
+    &_code{
+      height: 50px;
+      padding: 10px;
+      background-color: $background_color;
+      border-radius: 2px;
+      margin-bottom: 15px;
+      font-size: .975rem;
+      width: 90%;
+    }
+  }
+  
+
+  .payment_wrapper{
+    width: 95%;
+    margin:64px auto;
+  }
+
+
+
+.paymentForm{
+  display:flex;
+  flex-direction: column;
+
+  &_codebox{
+    display: flex;
+    justify-content:flex-start;
+
+    & label{
+      font-weight: 600;
+      display: block;
+    }
+  }
+}
