@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import MessageModal from '../enquiriesmodal/enquiriesmodal';
 import Modal from '../popupmodal/popupmodal';
 
-function Searchbar() {
+function Searchbar({ hotels }) {
 	const [isOpen, setIsOpen] = useState(false);
+	const [modalOpen, setmodalOpen] = useState(false);
 
 	return (
 		<div className="searchBarDetails_wrapper">
@@ -23,13 +24,13 @@ function Searchbar() {
 						onClick={() => setIsOpen(true)}>
 						Book Now
 					</button>
-					{isOpen && <Modal setIsOpen={setIsOpen} />}
+					{isOpen && <Modal hotels={hotels} setIsOpen={setIsOpen} />}
 					<button
-						onClick={() => setIsOpen(true)}
+						onClick={() => setmodalOpen(true)}
 						className="searchBarBtn_secondary">
 						Contact us
 					</button>
-					{isOpen && <MessageModal setIsOpen={setIsOpen} />}
+					{modalOpen && <MessageModal setIsOpen={setmodalOpen} />}
 				</div>
 			</div>
 		</div>

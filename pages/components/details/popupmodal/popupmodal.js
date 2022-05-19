@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import Image from 'next/image';
 
 const SignupSchema = Yup.object().shape({
 	firstName: Yup.string()
@@ -16,7 +17,10 @@ const SignupSchema = Yup.object().shape({
 	email: Yup.string().email('Invalid email').required('Required'),
 });
 
-const Modal = ({ setIsOpen }) => {
+const Modal = ({ hotels: { title, imageUrl, price, adress }, setIsOpen }) => {
+	const paymentLoader = ({ width = 200, quality = 100 }) => {
+		return `${imageUrl}?w=${width}&q=${quality || 75}`;
+	};
 	return (
 		<>
 			<div onClick={() => setIsOpen(false)} />
@@ -30,9 +34,21 @@ const Modal = ({ setIsOpen }) => {
 							<div className="thankuWrapper_heading">
 								<h2>Thank you for booking your hotel with us</h2>
 							</div>
-							<div>
-								<div className="thankuWrapper_ImageWrapper"></div>
-								<div className="thankuWrapper_infoWrapper"></div>
+
+							<div className="thankuWrapper_container">
+								<div className="thankuWrapper_ImageWrapper">
+									<Image
+										src={imageUrl}
+										width={150}
+										height={150}
+										loader={paymentLoader}
+									/>
+								</div>
+								<div className="thankuWrapper_infoWrapper">
+									<p>{title}</p>
+									<p>{price}</p>
+									<p>{adress}</p>
+								</div>
 								<div className="thankuWrapper_priceWrapper"></div>
 							</div>
 						</div>

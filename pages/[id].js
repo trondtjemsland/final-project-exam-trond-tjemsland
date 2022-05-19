@@ -36,14 +36,17 @@ export const getStaticProps = async (context) => {
 	};
 };
 
-const HotelDetails = ({
-	hotels: { title, imageUrl, sliderImages, price, adress, mapImg, reviews },
-}) => {
-	console.log('mapimg loader', mapImg);
+const HotelDetails = ({ hotels }) => {
+	const destructuredHotel = hotels;
+	const { title, imageUrl, sliderImages, price, adress, mapImg, reviews } =
+		destructuredHotel;
+
 	const myLoader = ({ src }) => {
 		return `${mapImg}?w=500&q=75`;
 	};
+	console.log('mapimg loader', mapImg);
 
+	console.log('hotels id', hotels);
 	return (
 		<>
 			<Head>
@@ -146,7 +149,7 @@ const HotelDetails = ({
 						</div>
 					</div>
 				</div>
-				<Searchbar />
+				<Searchbar hotels={hotels} />
 				<GuestReviews reviews={reviews} />
 				<Activities />
 			</main>

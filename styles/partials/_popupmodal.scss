@@ -49,10 +49,17 @@
   .thankuWrapper{
     width: 90%;
     margin: auto;
+    &_container{
+      display: flex;
+    }
     &_heading{
       margin-top: 64px;
       font-size:1.75rem;
       font-weight: 600;
+    }
+
+    &_ImageWrapper{
+      margin-right: 15px;
     }
   }
 
