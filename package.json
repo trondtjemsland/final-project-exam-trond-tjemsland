@@ -20,6 +20,7 @@
     "@mantine/hooks": "^4.1.4",
     "@mantine/modals": "^4.1.4",
     "@mantine/next": "^4.1.4",
+    "@mui/lab": "^5.0.0-alpha.82",
     "@mui/material": "^5.7.0",
     "axios": "^0.27.2",
     "dayjs": "^1.11.1",

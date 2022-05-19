@@ -7,16 +7,19 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
+import axios from 'axios';
+import { useRouter } from 'next/router';
+
 const SignupSchema = Yup.object().shape({
-	firstName: Yup.string()
+	firstname: Yup.string()
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
 		.required('Required'),
-	lastName: Yup.string()
+	lastname: Yup.string()
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
 		.required('Required'),
-	textarea: Yup.string()
+	message: Yup.string()
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
 		.required('Required'),
@@ -24,6 +27,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 export default function Home() {
+	const router = useRouter();
 	return (
 		<>
 			<Head>
@@ -67,33 +71,42 @@ export default function Home() {
 
 						<Formik
 							initialValues={{
-								firstName: '',
-								lastName: '',
+								firstname: '',
+								lastname: '',
 								email: '',
-								textarea: '',
+								message: '',
 							}}
 							validationSchema={SignupSchema}
-							onSubmit={(values) => {
-								// same shape as initial values
-								console.log(values);
+							onSubmit={(newMessage) => {
+								async function postdata() {
+									let response = await axios.post(
+										`http://localhost:1337/messages`,
+										newMessage
+									);
+
+									console.log(response);
+									alert('Success! Please refresh the browser.');
+									router.replace(router.asPath);
+								}
+								postdata();
 							}}>
 							{({ errors, touched }) => (
 								<Form className="contactForm">
 									<Field
-										name="firstName"
+										name="firstname"
 										placeholder="First Name"
 										className="inputField"
 									/>
-									{errors.firstName && touched.firstName ? (
-										<div>{errors.firstName}</div>
+									{errors.firstname && touched.firstname ? (
+										<div>{errors.firstname}</div>
 									) : null}
 									<Field
-										name="lastName"
+										name="lastname"
 										placeholder="Last Name"
 										className="inputField"
 									/>
-									{errors.lastName && touched.lastName ? (
-										<div>{errors.lastName}</div>
+									{errors.lastname && touched.lastname ? (
+										<div>{errors.lastname}</div>
 									) : null}
 									<Field
 										name="email"
@@ -106,13 +119,13 @@ export default function Home() {
 									) : null}
 									<Field
 										type="textarea"
-										name="textarea"
+										name="message"
 										component="textarea"
 										placeholder="Enter your message here"
 										className="textareaInput"
 									/>
-									{errors.textarea && touched.textarea ? (
-										<div>{errors.textarea}</div>
+									{errors.message && touched.message ? (
+										<div>{errors.message}</div>
 									) : null}
 
 									<button className="contactBtn" type="submit">

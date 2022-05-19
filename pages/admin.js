@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Navbar } from './components/header/header';
 import Footer from './components/footer/footer';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -14,16 +14,21 @@ import { useRouter } from 'next/router';
 import nookies, { parseCookies } from 'nookies';
 import axios from 'axios';
 
-function createData(name, price, id, location) {
-	return { name, price, id, location };
-}
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 
-function Admin({ user, JWT, hotels }) {
+import AddModal from './components/admin/adminadd/addmodal';
+
+// function createData(name, price, id, location) {
+// 	return { name, price, id, location };
+// }
+
+function Admin({ user, JWT, hotels, enquiries, messages }) {
 	console.log(hotels);
 	const router = useRouter();
-	// const {
-	// 	user: { email, username },
-	// } = props;
 
 	const logout = async () => {
 		try {
@@ -34,6 +39,14 @@ function Admin({ user, JWT, hotels }) {
 		}
 	};
 
+	const [value, setValue] = React.useState('1');
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
+	const [isOpen, setIsOpen] = useState(false);
+
+	console.log('messages', messages);
 	return (
 		<div>
 			<Head>
@@ -70,41 +83,199 @@ function Admin({ user, JWT, hotels }) {
 						</button>
 					</div>
 					<div className="adminWrapper_tableBox">
-						<TableContainer component={Paper}>
-							<Table sx={{ minWidth: 450 }} aria-label="simple table">
-								<TableHead>
-									<TableRow>
-										<TableCell>Hotels</TableCell>
-										<TableCell align="right">Id</TableCell>
-										<TableCell align="right">Price</TableCell>
-										<TableCell align="right">Location</TableCell>
-										<TableCell align="right">
-											<Icon icon="bx:edit" />
-										</TableCell>
-									</TableRow>
-								</TableHead>
-								<TableBody>
-									{hotels.map(({ id, title, adress, price }) => (
-										<TableRow
-											key={id}
-											sx={{
-												'&:last-child td, &:last-child th': { border: 0 },
-											}}>
-											<TableCell component="th" scope="row">
-												{title}
-											</TableCell>
-											<TableCell align="right">{id}</TableCell>
-											<TableCell align="right">{price}</TableCell>
-											<TableCell align="right">{adress}</TableCell>
-											<TableCell align="right">
-												<Icon icon="bx:edit" />
-											</TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</TableContainer>
-						<button className="addBtn">Add Product</button>
+						<Box sx={{ width: '100%', typography: 'body1' }}>
+							<TabContext value={value}>
+								<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+									<TabList
+										onChange={handleChange}
+										aria-label="lab API tabs example">
+										<Tab label="Hotels" value="1" />
+										<Tab label="Enquiries" value="2" />
+										<Tab label="Messages" value="3" />
+									</TabList>
+								</Box>
+								<TabPanel value="1">
+									<TableContainer component={Paper}>
+										<Table sx={{ minWidth: 450 }} aria-label="simple table">
+											<TableHead>
+												<TableRow>
+													<TableCell>Hotels</TableCell>
+													<TableCell align="right">Id</TableCell>
+													<TableCell align="right">Price</TableCell>
+													<TableCell align="right">Location</TableCell>
+													<TableCell align="right">
+														<Icon icon="bx:edit" />
+													</TableCell>
+													<TableCell align="right">
+														<Icon icon="fa6-regular:trash-can" />
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{hotels.map(({ id, title, adress, price }) => (
+													<TableRow
+														key={id}
+														sx={{
+															'&:last-child td, &:last-child th': { border: 0 },
+														}}>
+														<TableCell component="th" scope="row">
+															{title}
+														</TableCell>
+														<TableCell align="right">{id}</TableCell>
+														<TableCell align="right">{price}</TableCell>
+														<TableCell align="right">{adress}</TableCell>
+														<TableCell align="right">
+															<button>
+																<Icon icon="bx:edit" />
+															</button>
+														</TableCell>
+														<TableCell align="right">
+															<button
+																onClick={() => {
+																	async function deleteHotel() {
+																		let response = await axios.delete(
+																			`http://localhost:1337/hotels/${id}`,
+
+																			{
+																				headers: {
+																					Authorization: `Bearer ${JWT}`,
+																				},
+																			}
+																		);
+																		router.replace(router.asPath);
+																		console.log(response);
+																	}
+																	deleteHotel();
+																}}>
+																<Icon icon="fa6-regular:trash-can" />
+															</button>
+														</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
+									<button onClick={() => setIsOpen(true)} className="addBtn">
+										Add
+									</button>
+									{isOpen && <AddModal JWT={JWT} setIsOpen={setIsOpen} />}
+								</TabPanel>
+								<TabPanel value="2">
+									<TableContainer component={Paper}>
+										<Table sx={{ minWidth: 450 }} aria-label="simple table">
+											<TableHead>
+												<TableRow>
+													<TableCell align="left">Name</TableCell>
+													<TableCell align="left">Phonenumber</TableCell>
+													<TableCell align="left">Email</TableCell>
+													<TableCell align="left">Message</TableCell>
+
+													<TableCell align="left">
+														<Icon icon="fa6-regular:trash-can" />
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{enquiries.map(
+													({ name, phonenumber, email, message, id }) => (
+														<TableRow
+															key={id}
+															sx={{
+																'&:last-child td, &:last-child th': {
+																	border: 0,
+																},
+															}}>
+															<TableCell align="left">{name}</TableCell>
+															<TableCell align="left">{phonenumber}</TableCell>
+															<TableCell align="left">{email}</TableCell>
+															<TableCell align="left">{message}</TableCell>
+															<TableCell align="left">
+																<button
+																	onClick={() => {
+																		async function deleteEnquirie() {
+																			let response = await axios.delete(
+																				`http://localhost:1337/enquiries/${id}`,
+
+																				{
+																					headers: {
+																						Authorization: `Bearer ${JWT}`,
+																					},
+																				}
+																			);
+																			router.replace(router.asPath);
+																			console.log(response);
+																		}
+																		deleteEnquirie();
+																	}}>
+																	<Icon icon="fa6-regular:trash-can" />
+																</button>
+															</TableCell>
+														</TableRow>
+													)
+												)}
+											</TableBody>
+										</Table>
+									</TableContainer>
+								</TabPanel>
+								<TabPanel value="3">
+									<TableContainer component={Paper}>
+										<Table sx={{ minWidth: 450 }} aria-label="simple table">
+											<TableHead>
+												<TableRow>
+													<TableCell align="left">Name</TableCell>
+													<TableCell align="left">Phonenumber</TableCell>
+													<TableCell align="left">Email</TableCell>
+													<TableCell align="left">Message</TableCell>
+
+													<TableCell align="left">
+														<Icon icon="fa6-regular:trash-can" />
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{messages.map(
+													({ firstname, lastname, email, message, id }) => (
+														<TableRow
+															key={id}
+															sx={{
+																'&:last-child td, &:last-child th': {
+																	border: 0,
+																},
+															}}>
+															<TableCell align="left">{firstname}</TableCell>
+															<TableCell align="left">{lastname}</TableCell>
+															<TableCell align="left">{email}</TableCell>
+															<TableCell align="left">{message}</TableCell>
+															<TableCell align="left">
+																<button
+																	onClick={() => {
+																		async function deleteEnquirie() {
+																			let response = await axios.delete(
+																				`http://localhost:1337/enquiries/${id}`,
+
+																				{
+																					headers: {
+																						Authorization: `Bearer ${JWT}`,
+																					},
+																				}
+																			);
+																			router.replace(router.asPath);
+																			console.log(response);
+																		}
+																		deleteEnquirie();
+																	}}>
+																	<Icon icon="fa6-regular:trash-can" />
+																</button>
+															</TableCell>
+														</TableRow>
+													)
+												)}
+											</TableBody>
+										</Table>
+									</TableContainer>
+								</TabPanel>
+							</TabContext>
+						</Box>
 					</div>
 				</div>
 			</main>
@@ -122,6 +293,8 @@ export const getServerSideProps = async (ctx) => {
 	const JWT = parseCookies(ctx).jwt;
 
 	let hotels = null;
+	let enquiries = null;
+	let messages = null;
 
 	if (JWT) {
 		try {
@@ -133,8 +306,12 @@ export const getServerSideProps = async (ctx) => {
 			user = data;
 
 			const hotelsData = await axios.get('http://localhost:1337/hotels');
+			const enquiriesData = await axios.get('http://localhost:1337/enquiries');
+			const messageData = await axios.get('http://localhost:1337/messages');
 
+			enquiries = enquiriesData.data;
 			hotels = hotelsData.data;
+			messages = messageData.data;
 		} catch (e) {
 			console.log(e);
 		}
@@ -154,6 +331,8 @@ export const getServerSideProps = async (ctx) => {
 			user,
 			JWT,
 			hotels,
+			enquiries,
+			messages,
 		},
 	};
 };

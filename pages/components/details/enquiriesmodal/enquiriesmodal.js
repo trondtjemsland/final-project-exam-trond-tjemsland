@@ -1,0 +1,107 @@
+import React from 'react';
+import { Icon } from '@iconify/react';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+
+const SignupSchema = Yup.object().shape({
+	name: Yup.string()
+		.min(2, 'Too Short!')
+		.max(50, 'Too Long!')
+		.required('Required'),
+	message: Yup.string()
+		.min(2, 'Too Short!')
+		.max(50, 'Too Long!')
+		.required('Required'),
+	phonenumber: Yup.string()
+		.min(2, 'Too Short!')
+		.max(50, 'Too Long!')
+		.required('Required'),
+	email: Yup.string().email('Invalid email').required('Required'),
+});
+
+const MessageModal = ({ setIsOpen }) => {
+	const router = useRouter();
+	return (
+		<>
+			<div onClick={() => setIsOpen(false)} />
+			<div className="modal_wrapper">
+				<div className="modal">
+					<button className="modal__close-btn" onClick={() => setIsOpen(false)}>
+						<Icon icon="ci:close-small" color="00000" height={46} />
+					</button>
+					<div className="enq_wrapper">
+						<h1>Send your message</h1>
+						<Formik
+							initialValues={{
+								name: '',
+								message: '',
+								email: '',
+								phonenumber: '',
+							}}
+							validationSchema={SignupSchema}
+							onSubmit={(newEnquirie) => {
+								async function postdata() {
+									let response = await axios.post(
+										`http://localhost:1337/enquiries`,
+										newEnquirie
+									);
+
+									console.log(response);
+									alert('Success! Please refresh the browser.');
+									router.replace(router.asPath);
+								}
+								postdata();
+							}}>
+							{({ errors, touched }) => (
+								<Form className="enq_form">
+									<Field
+										className="enq_input"
+										name="name"
+										placeholder="Enter your name"
+									/>
+									{errors.name && touched.name ? (
+										<div>{errors.name}</div>
+									) : null}
+									<Field
+										className="enq_input"
+										name="phonenumber"
+										placeholder="Enter your phonenumber"
+									/>
+									{errors.phonenumber && touched.phonenumber ? (
+										<div>{errors.phonenumber}</div>
+									) : null}
+									<Field
+										className="enq_input"
+										name="email"
+										type="email"
+										placeholder="Enter your email"
+									/>
+									{errors.email && touched.email ? (
+										<div>{errors.email}</div>
+									) : null}
+									<Field
+										type="textarea"
+										name="message"
+										component="textarea"
+										placeholder="Enter your message here"
+										className="messageInput"
+									/>
+									{errors.textarea && touched.textarea ? (
+										<div>{errors.textarea}</div>
+									) : null}
+									<button className="contactBtn" type="submit">
+										Submit
+									</button>
+								</Form>
+							)}
+						</Formik>
+					</div>
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default MessageModal;

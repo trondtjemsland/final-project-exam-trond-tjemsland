@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import nookies from 'nookies';
+
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useRouter } from 'next/router';

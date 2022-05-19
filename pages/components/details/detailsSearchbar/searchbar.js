@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MessageModal from '../enquiriesmodal/enquiriesmodal';
 import Modal from '../popupmodal/popupmodal';
 
 function Searchbar() {
@@ -23,7 +24,12 @@ function Searchbar() {
 						Book Now
 					</button>
 					{isOpen && <Modal setIsOpen={setIsOpen} />}
-					<button className="searchBarBtn_secondary">Contact us</button>
+					<button
+						onClick={() => setIsOpen(true)}
+						className="searchBarBtn_secondary">
+						Contact us
+					</button>
+					{isOpen && <MessageModal setIsOpen={setIsOpen} />}
 				</div>
 			</div>
 		</div>

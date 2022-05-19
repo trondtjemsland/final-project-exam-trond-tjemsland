@@ -33,7 +33,7 @@ function Typeahead({ hotels }) {
 								}
 							})
 							.map(({ title, id }) => {
-								return <p key={id}>{title}</p>;
+								// return <p key={id}>{title}</p>;
 							})}
 					</div>
 				</div>
