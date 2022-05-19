@@ -6,15 +6,36 @@ function Searchbar({ hotels }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [modalOpen, setmodalOpen] = useState(false);
 
+	// let defaultDate = new Date();
+	// defaultDate.setDate(defaultDate.getDate());
+
+	const [date, setDate] = useState();
+
+	const onSetDate = (event) => {
+		setDate(new Date(event.target.value));
+	};
+
 	return (
 		<div className="searchBarDetails_wrapper">
 			<div className="detailsFormContainer">
 				<div className="detailsInput">
-					<input id="date" type="date" />
+					<input
+						id="date"
+						type="date"
+						// value={date.toLocaleDateString('en-CA')}
+						onChange={(e) => {
+							console.log(e.target.value);
+							setDate(e.target.value);
+						}}
+					/>
 				</div>
-				<div className="detailsInput">
-					<input id="date" type="date" />
-				</div>
+				{/* <div className="detailsInput">
+					<input
+						id="date"
+						type="date"
+						value={date.toLocaleDateString('en-CA')}
+					/>
+				</div> */}
 				<div className="detailsInput">
 					<input id="text" type="text" placeholder="Rooms" />
 				</div>
@@ -24,7 +45,9 @@ function Searchbar({ hotels }) {
 						onClick={() => setIsOpen(true)}>
 						Book Now
 					</button>
-					{isOpen && <Modal hotels={hotels} setIsOpen={setIsOpen} />}
+					{isOpen && (
+						<Modal date={date} hotels={hotels} setIsOpen={setIsOpen} />
+					)}
 					<button
 						onClick={() => setmodalOpen(true)}
 						className="searchBarBtn_secondary">

@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import Image from 'next/image';
+import moment from 'moment';
 
 const SignupSchema = Yup.object().shape({
 	firstName: Yup.string()
@@ -17,7 +18,11 @@ const SignupSchema = Yup.object().shape({
 	email: Yup.string().email('Invalid email').required('Required'),
 });
 
-const Modal = ({ hotels: { title, imageUrl, price, adress }, setIsOpen }) => {
+const Modal = ({
+	date,
+	hotels: { title, imageUrl, price, adress },
+	setIsOpen,
+}) => {
 	const paymentLoader = ({ width = 200, quality = 100 }) => {
 		return `${imageUrl}?w=${width}&q=${quality || 75}`;
 	};
@@ -45,9 +50,10 @@ const Modal = ({ hotels: { title, imageUrl, price, adress }, setIsOpen }) => {
 									/>
 								</div>
 								<div className="thankuWrapper_infoWrapper">
-									<p>{title}</p>
-									<p>{price}</p>
+									<h2>{title}</h2>
 									<p>{adress}</p>
+									<p>${price}</p>
+									<p>{moment(date).format('MMM Do YY')}</p>
 								</div>
 								<div className="thankuWrapper_priceWrapper"></div>
 							</div>

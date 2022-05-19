@@ -51,15 +51,29 @@
     margin: auto;
     &_container{
       display: flex;
+      background: rgba(237, 242, 251, 0.8);
+      border-radius: 2px;
+      padding: 15px;
     }
     &_heading{
       margin-top: 64px;
-      font-size:1.75rem;
+      font-size:1.85rem;
       font-weight: 600;
+      margin-bottom: 24px;
     }
 
     &_ImageWrapper{
       margin-right: 15px;
+    }
+
+    &_infoWrapper{
+      & h2{
+        font-weight: 600;
+        font-size:$cardtitle;
+      }
+      & p {
+        font-weight: 600 ;
+      }
     }
   }
 

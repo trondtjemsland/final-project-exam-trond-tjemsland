@@ -9,6 +9,7 @@ import Searchbar from './components/details/detailsSearchbar/searchbar';
 import GuestReviews from './components/details/guestreviews/guestreviews';
 import Activities from './components/details/activities/activities';
 import { BASEURL } from './components/lib/variables';
+import Component from './components/getDate/gettingDate';
 
 export const getStaticPaths = async () => {
 	const res = await fetch(BASEURL + '/hotels');
@@ -152,6 +153,7 @@ const HotelDetails = ({ hotels }) => {
 				<Searchbar hotels={hotels} />
 				<GuestReviews reviews={reviews} />
 				<Activities />
+				<Component />
 			</main>
 			<Footer />
 		</>
