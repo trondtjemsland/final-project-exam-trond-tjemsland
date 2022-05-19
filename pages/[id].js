@@ -8,9 +8,10 @@ import Amenities from './components/Hotels/amenities/amenities';
 import Searchbar from './components/details/detailsSearchbar/searchbar';
 import GuestReviews from './components/details/guestreviews/guestreviews';
 import Activities from './components/details/activities/activities';
+import { BASEURL } from './components/lib/variables';
 
 export const getStaticPaths = async () => {
-	const res = await fetch('http://localhost:1337/hotels');
+	const res = await fetch(BASEURL + '/hotels');
 	const data = await res.json();
 
 	const paths = data.map((hotel) => {
@@ -27,7 +28,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
 	const id = context.params.id;
-	const res = await fetch('http://localhost:1337/hotels/' + id);
+	const res = await fetch(BASEURL + '/hotels/' + id);
 	const data = await res.json();
 
 	return {

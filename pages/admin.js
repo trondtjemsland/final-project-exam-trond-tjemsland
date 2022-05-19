@@ -21,6 +21,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
 import AddModal from './components/admin/adminadd/addmodal';
+import { BASEURL } from './components/lib/variables';
 
 // function createData(name, price, id, location) {
 // 	return { name, price, id, location };
@@ -134,7 +135,7 @@ function Admin({ user, JWT, hotels, enquiries, messages }) {
 																onClick={() => {
 																	async function deleteHotel() {
 																		let response = await axios.delete(
-																			`http://localhost:1337/hotels/${id}`,
+																			`${BASEURL}/hotels/${id}`,
 
 																			{
 																				headers: {
@@ -194,7 +195,7 @@ function Admin({ user, JWT, hotels, enquiries, messages }) {
 																	onClick={() => {
 																		async function deleteEnquirie() {
 																			let response = await axios.delete(
-																				`http://localhost:1337/enquiries/${id}`,
+																				`${BASEURL}/enquiries/${id}`,
 
 																				{
 																					headers: {
@@ -251,7 +252,7 @@ function Admin({ user, JWT, hotels, enquiries, messages }) {
 																	onClick={() => {
 																		async function deleteEnquirie() {
 																			let response = await axios.delete(
-																				`http://localhost:1337/enquiries/${id}`,
+																				`${BASEURL}/enquiries/${id}`,
 
 																				{
 																					headers: {
@@ -298,16 +299,16 @@ export const getServerSideProps = async (ctx) => {
 
 	if (JWT) {
 		try {
-			const { data } = await axios.get('http://localhost:1337/users/me', {
+			const { data } = await axios.get(BASEURL + '/users/me', {
 				headers: {
 					Authorization: `Bearer ${JWT}`,
 				},
 			});
 			user = data;
 
-			const hotelsData = await axios.get('http://localhost:1337/hotels');
-			const enquiriesData = await axios.get('http://localhost:1337/enquiries');
-			const messageData = await axios.get('http://localhost:1337/messages');
+			const hotelsData = await axios.get(BASEURL + '/hotels');
+			const enquiriesData = await axios.get(BASEURL + '/enquiries');
+			const messageData = await axios.get(BASEURL + '/messages');
 
 			enquiries = enquiriesData.data;
 			hotels = hotelsData.data;

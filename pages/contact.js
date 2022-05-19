@@ -9,6 +9,7 @@ import * as Yup from 'yup';
 
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { BASEURL } from './components/lib/variables';
 
 const SignupSchema = Yup.object().shape({
 	firstname: Yup.string()
@@ -80,7 +81,7 @@ export default function Home() {
 							onSubmit={(newMessage) => {
 								async function postdata() {
 									let response = await axios.post(
-										`http://localhost:1337/messages`,
+										`${BASEURL}/messages`,
 										newMessage
 									);
 

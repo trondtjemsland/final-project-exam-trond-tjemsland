@@ -6,9 +6,10 @@ import Footer from './components/footer/footer';
 import Herobannerhotels from './components/Hotels/herobanner_hotels/herobannerhotels';
 import { Navbar } from './components/header/header';
 import Typeahead from './components/typeahead/typeahead';
+import { BASEURL } from './components/lib/variables';
 
 export const getStaticProps = async () => {
-	const res = await fetch('http://localhost:1337/hotels');
+	const res = await fetch(BASEURL + '/hotels');
 	const data = await res.json();
 
 	return {

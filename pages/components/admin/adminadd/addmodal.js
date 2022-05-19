@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { BASEURL } from '../../lib/variables';
 
 const SignupSchema = Yup.object().shape({
 	title: Yup.string()
@@ -55,7 +56,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								console.log(JWT);
 								async function postdata() {
 									let response = await axios.post(
-										`http://localhost:1337/hotels`,
+										`${BASEURL}/hotels`,
 										newHotel,
 										{
 											headers: {

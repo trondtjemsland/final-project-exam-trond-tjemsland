@@ -4,6 +4,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { BASEURL } from '../../lib/variables';
 
 const SignupSchema = Yup.object().shape({
 	name: Yup.string()
@@ -44,7 +45,7 @@ const MessageModal = ({ setIsOpen }) => {
 							onSubmit={(newEnquirie) => {
 								async function postdata() {
 									let response = await axios.post(
-										`http://localhost:1337/enquiries`,
+										`${BASEURL}/enquiries`,
 										newEnquirie
 									);
 
