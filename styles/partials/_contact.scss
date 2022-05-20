@@ -29,6 +29,11 @@
 .contact_headingBox{
     text-align: center;
 
+    & h1{
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
     & h2{
         color: $text-color;
         font-weight: 700;
@@ -75,17 +80,17 @@
 
 .contactBtn{
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.225rem;
     font-family: 'Poppins', 'Arial Narrow', Arial, sans-serif;
-    height: 60px;
-    width: 60%;
+    height: 50px;
+    width: 120px;
     margin-top: 20px;
     background-color: $primary-button;
     border-radius: 5px;
 }
 
 
-@media only screen and (max-width: 1220px) {
+@media only screen and (max-width: 1120px) {
  
     .contact_wrapper{
         display: flex;
@@ -99,4 +104,13 @@
             font-size: $h3TextSize;
         }
     }
+}
+
+@media only screen and (max-width: 660px) {
+.contact_wrapper{
+    width: 90%;
+}
+.contact_formContainer {
+    padding: 10px;
+}
 }

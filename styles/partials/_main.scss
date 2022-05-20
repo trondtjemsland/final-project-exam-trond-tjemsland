@@ -4,7 +4,6 @@
     padding: 48px 0px 48px 54px;
     @media only screen and (max-width: 680px) {
         width: 100%;
-       
         padding: 15px;
     }
 }
@@ -183,7 +182,7 @@
 }
 
 .club{
-        &_wrapper{
+    &_wrapper{
         display: flex;
         width: 95%;
         background-color: $white;
@@ -191,6 +190,15 @@
         border-radius: 20px;
         margin-bottom: 80px;
        
+    }
+
+    &_imgWrapper{
+       width: 40%;
+       position: relative;
+       @media only screen and (max-width: 768px) {
+       display: none;
+       }
+   
     }
 
     &_textBoxWrapper{

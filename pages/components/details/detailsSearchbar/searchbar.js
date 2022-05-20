@@ -29,13 +29,18 @@ function Searchbar({ hotels }) {
 						}}
 					/>
 				</div>
-				{/* <div className="detailsInput">
+				<div className="detailsInput">
 					<input
 						id="date"
 						type="date"
-						value={date.toLocaleDateString('en-CA')}
+						// value={date.toLocaleDateString('en-CA')}
+						onChange={(e) => {
+							console.log(e.target.value);
+							setDate(e.target.value);
+						}}
 					/>
-				</div> */}
+				</div>
+
 				<div className="detailsInput">
 					<input id="text" type="text" placeholder="Rooms" />
 				</div>

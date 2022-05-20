@@ -3,13 +3,14 @@
     width: 95%;
     margin: 64px auto 0;
 
+
     &_header{
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 48px;
         @media only screen and (max-width: 946px) {
-            display: block;
+            align-items: baseline;
 
     
         }
@@ -37,6 +38,16 @@
                 font-size:2.225rem;
             }
         }
+        @media only screen and (max-width: 760px) {
+ 
+            & h1{
+                font-size:1.6rem;
+            }
+            & p{
+                
+                font-size: 14px;
+            }
+        }
     }
 
     &_booking{
@@ -59,9 +70,6 @@
     }
 
     &_hotelInfo{   
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         width: 40%;
     }
 
@@ -75,12 +83,17 @@
         font-size: 20px;
         font-weight: bold;
         font-family: 'Poppins', Courier, monospace;
+        @media only screen and (max-width: 946px) {
+            font-size: 16px;
+            width: 130px;
+            padding: 10px;
+        }
     }
 
 
     &_sliderWrapper{
         width: 60%;
-        max-height: 650px;
+        
         @media only screen and (max-width: 946px) {
             margin-top: 20px;
             height: none;
@@ -93,7 +106,10 @@
         display: flex;
         justify-content: space-between;
         column-gap: 20px;
+        border:2px solid red;
+        min-height: 350px;
     }
+
 
     &_ratingContainer{
         display: flex;
@@ -116,6 +132,13 @@
 
         
     }
+}
+
+.mapContainer{
+    position: relative;
+    min-height: 200px;
+    min-width: 100%;
+    margin: auto;
 }
 
 .priceMatch{
@@ -167,6 +190,7 @@
 
 .reviewsWrapper{
     margin-top: 1.125rem;
+    margin-bottom: 3rem;
     width: 100%;
     color: $text-color;
     &_divider{
@@ -189,11 +213,15 @@
     align-items: center;
     padding: 10px;
     width: 150px;
+
+    & p{
+        font-weight: 700;
+        font-size: 14px;
+    }
     &_icon{
         margin-right:5px;
         height:25px;
         width: 25px;
-        
     }
 }
 
@@ -274,15 +302,14 @@
 
 .guestReviewContainer{
     width: 95%;
-    margin: auto;
+    margin:auto;
 
     &__title{
-        width: 95%;
+        
         margin:auto; 
-
         & h3{
             color: $text-color;
-            font-weight: 500;
+            font-weight: 700;
             font-size:2.20rem;
         }
     }
@@ -296,8 +323,10 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        justify-content: center;
         width: 95%;
-        margin: auto;
+        margin: 20px auto;
+        
 
     }
 
@@ -406,7 +435,7 @@
     flex-direction: column;
 }
 .enq_input{
-    height: 40px;
+    height: 40px; 
     border-radius: 2px;
     margin-top: 24px;
     padding: 15px;
@@ -443,10 +472,6 @@
         &_hotelInfo{  
             width: 80%;
             margin: auto;
-        }
-        &_sliderWrapper {
-            width: 60%;
-            height:none;
         }
     }
 

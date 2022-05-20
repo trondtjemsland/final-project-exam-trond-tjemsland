@@ -41,21 +41,36 @@ const Modal = ({
 							</div>
 
 							<div className="thankuWrapper_container">
-								<div className="thankuWrapper_ImageWrapper">
-									<Image
-										src={imageUrl}
-										width={150}
-										height={150}
-										loader={paymentLoader}
-									/>
+								<div className="thankuWrapper_box1">
+									<div className="thankuWrapper_ImageWrapper">
+										<Image
+											src={imageUrl}
+											width={170}
+											height={150}
+											loader={paymentLoader}
+										/>
+									</div>
+									<div className="thankuWrapper_infoWrapper">
+										<h2>{title}</h2>
+										<p>{adress}</p>
+										<div className="thankuWrapper_infoWrapper_dates">
+											<p>{moment(date).format('MMM Do YY')}</p>
+											<p>{moment(date).format('MMM Do YY')}</p>
+										</div>
+										<div className="thankuWrapper_priceWrapper">
+											<p>${price}</p>
+										</div>
+									</div>
 								</div>
-								<div className="thankuWrapper_infoWrapper">
-									<h2>{title}</h2>
-									<p>{adress}</p>
-									<p>${price}</p>
-									<p>{moment(date).format('MMM Do YY')}</p>
+								<div className="thankuWrapper_bonusWrapper">
+									<div className="thankuWrapper_bonusWrapper_circle">
+										<Icon
+											className="thankuWrapper_bonusWrapper_circle_icon"
+											icon="fa-solid:percent"
+										/>
+									</div>
+									You have earned 500 points
 								</div>
-								<div className="thankuWrapper_priceWrapper"></div>
 							</div>
 						</div>
 					</div>

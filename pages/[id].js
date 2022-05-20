@@ -7,9 +7,8 @@ import { Icon } from '@iconify/react';
 import Amenities from './components/Hotels/amenities/amenities';
 import Searchbar from './components/details/detailsSearchbar/searchbar';
 import GuestReviews from './components/details/guestreviews/guestreviews';
-import Activities from './components/details/activities/activities';
+// import Activities from './components/details/activities/activities';
 import { BASEURL } from './components/lib/variables';
-import Component from './components/getDate/gettingDate';
 
 export const getStaticPaths = async () => {
 	const res = await fetch(BASEURL + '/hotels');
@@ -42,7 +41,7 @@ const HotelDetails = ({ hotels }) => {
 	const { title, imageUrl, sliderImages, price, adress, mapImg, reviews } =
 		destructuredHotel;
 
-	const myLoader = ({ src }) => {
+	const myMapLoader = ({ src }) => {
 		return `${mapImg}?w=500&q=75`;
 	};
 	console.log('mapimg loader', mapImg);
@@ -97,18 +96,15 @@ const HotelDetails = ({ hotels }) => {
 							<button className="details_bookingBtn">Book your Room</button>
 						</div>
 					</div>
+
 					<div className="details_infoBox">
-						<div className="details_sliderWrapper">
-							<DetailSlider imageUrl={imageUrl} sliderImages={sliderImages} />
-						</div>
+						<DetailSlider imageUrl={imageUrl} sliderImages={sliderImages} />
 						<div className="details_hotelInfo">
 							<div className="mapContainer">
 								<Image
-									loader={myLoader}
+									loader={myMapLoader}
 									src={mapImg}
-									layout={'responsive'}
-									width={420}
-									height={210}
+									layout="fill"
 									alt={
 										'Destination of the hotel Boulevard 77500 Cancun, Mexico'
 									}
@@ -152,8 +148,7 @@ const HotelDetails = ({ hotels }) => {
 				</div>
 				<Searchbar hotels={hotels} />
 				<GuestReviews reviews={reviews} />
-				<Activities />
-				<Component />
+				{/* <Activities /> */}
 			</main>
 			<Footer />
 		</>

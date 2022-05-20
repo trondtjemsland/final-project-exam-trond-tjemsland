@@ -36,7 +36,7 @@ export default function DetailSlider({
 	};
 
 	return (
-		<>
+		<div className="details_sliderWrapper">
 			<Swiper
 				style={{
 					'--swiper-navigation-color': '#fff',
@@ -90,6 +90,6 @@ export default function DetailSlider({
 					<img src={sliderImg5} />
 				</SwiperSlide>
 			</Swiper>
-		</>
+		</div>
 	);
 }

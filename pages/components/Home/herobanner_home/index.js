@@ -1,5 +1,4 @@
 import React from 'react';
-import Demo from '../../datepicker';
 import { NavbarHero } from '../heroheader';
 
 function HeroBanner() {
@@ -8,9 +7,6 @@ function HeroBanner() {
 			<NavbarHero />
 			<div className="heroImage_textBox">
 				<h1 className="heroImage_h1">Find your hotel here!</h1>
-			</div>
-			<div className="formContainer">
-				<Demo />
 			</div>
 		</div>
 	);

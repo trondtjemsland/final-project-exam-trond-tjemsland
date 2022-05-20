@@ -16,7 +16,7 @@ export const NavbarHero = () => {
 			<nav className="navBarHero  flex items-center flex-wrap p-4 ">
 				<Link href="/">
 					<a className="inline-flex items-center p-2 ">
-						<Image src="/logo4.svg" width="300px" height="140px" alt="logo" />
+						<Image src="/logo4.svg" width="200px" height="140px" alt="logo" />
 					</a>
 				</Link>
 				<button
