@@ -19,11 +19,12 @@
         @media only screen and (max-width: 990px) {
           font-size: 5rem;
           max-width: 600px;
+          line-height: 100px;
         }
         @media only screen and (max-width: 680px) {
-            font-size: 3.250rem;
+            font-size: 3.5rem;
             max-width: 400px;
-
+            line-height: 80px;
         }
     }
 

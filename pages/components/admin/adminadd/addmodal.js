@@ -50,6 +50,17 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								adress: '',
 								imageUrl: '',
 								featuredHotel: false,
+								icons: {
+									wellness: false,
+									fitness: false,
+									petFriendly: false,
+									noSmoking: false,
+									wifi: false,
+									parking: false,
+									aircon: false,
+									restaurant: false,
+									accsessibility: false,
+								},
 							}}
 							validationSchema={SignupSchema}
 							onSubmit={(newHotel) => {
@@ -114,12 +125,44 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									{errors.imageUrl && touched.imageUrl ? (
 										<div>{errors.imageUrl}</div>
 									) : null}
-
-									<label>
-										<Field type="checkbox" name="featuredHotel" />
-										<span>Featured</span>
-									</label>
-
+									<div className="addModalForm_amenitiesWrapper">
+										<label>
+											<Field type="checkbox" name="featuredHotel" />
+											<span>Featured</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="wellness" />
+											<span>Wellness</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="petFriendly" />
+											<span>petFriendly</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="noSmoking" />
+											<span>noSmoking</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="wifi" />
+											<span>wifi</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="parking" />
+											<span>parking</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="aircon" />
+											<span>aircon</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="restaurant" />
+											<span>restaurant</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="accsessibility" />
+											<span>accsessibility</span>
+										</label>
+									</div>
 									<button className="addBtn" type="submit">
 										Submit
 									</button>

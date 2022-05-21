@@ -100,7 +100,7 @@
         width:95%; 
         padding: 48px;
         background-color: $white;
-        border-radius: 20px;
+        border-radius: 5px;
         margin-bottom: 80px;
     }
 
@@ -121,7 +121,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        @media only screen and (max-width: 990px) {
+        @media only screen and (max-width: 1160px) {
             flex-direction: column;
             flex-wrap: wrap;
             align-items: center;
@@ -187,7 +187,7 @@
         width: 95%;
         background-color: $white;
         margin: auto;
-        border-radius: 20px;
+        border-radius: 5px;
         margin-bottom: 80px;
        
     }
@@ -229,7 +229,7 @@
     &_imageWrapper{
         display: none;
        &_img{
-        border-radius:20px 0px 0px 20px;
+        border-radius:5px 0px 0px 5px;
        }
     }
 

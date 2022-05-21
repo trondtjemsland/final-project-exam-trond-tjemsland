@@ -1,12 +1,19 @@
 .addModalWrapper{
-  
+    
     background-color: $green;
     width: 100%;
+    padding: 20px;
+
+    & h1{
+        font-weight: 600;
+        font-size: 1.8rem;
+        text-align:center;
+    }
 }
 
 
 .addModalForm{
-    margin: 64px auto;
+    margin: 10px auto;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -20,5 +27,23 @@
         height: 40px;
         margin-bottom: 15px;
         padding: 15px;
+    }
+
+    &_amenitiesWrapper{
+       border: solid 2px red;
+       width: 100%;
+       display: flex;
+       flex-wrap: wrap;
+
+       & label {
+           display: flex;
+           align-items: center;
+           margin-right: 10px;
+           & input{
+                margin-right: 5px;
+                height: 20px;
+                width: 20px;
+           }
+       }
     }
 }

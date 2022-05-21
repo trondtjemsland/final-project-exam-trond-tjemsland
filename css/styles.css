@@ -33,15 +33,34 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 10px;
   z-index: 10;
+  position: relative;
 }
 
 .navBarLinks {
   color: #EDF2FB;
+}
+
+.hamburgerIcon {
+  color: #EDF2FB;
+  font-size: 2.25rem;
+  cursor: pointer;
+}
+
+.exitIcon {
+  color: #EDF2FB;
+  font-size: 4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 .active {
@@ -62,12 +81,57 @@ main {
   background-color: #006462;
 }
 
+@media only screen and (max-width: 760px) {
+  .Header__Nav {
+    display: none;
+  }
+}
+
 .Header__Nav a {
   font-family: 'Poppins', Courier, monospace;
   font-weight: 700;
   margin-left: 30px;
   font-size: 1.125rem;
   letter-spacing: 1px;
+}
+
+.hamburgerNav {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #006462;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hamburgerNav_links {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hidemenu {
+  display: none;
+}
+
+@media only screen and (min-width: 760px) {
+  .hamburgerIcon {
+    display: none;
+  }
 }
 
 .heroImage {
@@ -95,13 +159,15 @@ main {
   .heroImage_h1 {
     font-size: 5rem;
     max-width: 600px;
+    line-height: 100px;
   }
 }
 
 @media only screen and (max-width: 680px) {
   .heroImage_h1 {
-    font-size: 3.250rem;
+    font-size: 3.5rem;
     max-width: 400px;
+    line-height: 80px;
   }
 }
 
@@ -238,7 +304,7 @@ main {
   width: 95%;
   padding: 48px;
   background-color: #EDF2FB;
-  border-radius: 20px;
+  border-radius: 5px;
   margin-bottom: 80px;
 }
 
@@ -272,7 +338,7 @@ main {
           justify-content: center;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1160px) {
   .homeInfo_iconContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -357,7 +423,7 @@ main {
   width: 95%;
   background-color: #EDF2FB;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 5px;
   margin-bottom: 80px;
 }
 
@@ -403,7 +469,7 @@ main {
 }
 
 .club_imageWrapper_img {
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .club_textBox {
@@ -487,13 +553,12 @@ main {
   display: flex;
   width: 93%;
   margin: auto;
-  border: red 1px solid;
 }
 
 .searchInput_container input {
   margin-right: 10px;
-  min-height: 60px;
-  border-radius: 5px;
+  min-height: 50px;
+  border-radius: 2px;
   padding: 10px;
   font-family: 'Poppins';
   font-weight: 500;
@@ -836,7 +901,6 @@ main {
           justify-content: space-between;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-  border: 2px solid red;
   min-height: 350px;
 }
 
@@ -1088,6 +1152,7 @@ main {
           justify-content: center;
   width: 95%;
   margin: 20px auto;
+  row-gap: 20px;
 }
 
 .guestReview__card {
@@ -1193,8 +1258,13 @@ main {
 }
 
 .enq_wrapper {
-  width: 95%;
-  margin: auto;
+  width: 45%;
+  margin: 20px auto;
+}
+
+.enq_wrapper h1 {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .enq_form {
@@ -1223,7 +1293,7 @@ main {
 
 @media only screen and (max-width: 1124px) {
   .details_sliderWrapper {
-    width: 80%;
+    width: 90%;
     margin: auto;
   }
   .details_infoBox {
@@ -1237,7 +1307,7 @@ main {
     margin-bottom: 20px;
   }
   .details_hotelInfo {
-    width: 80%;
+    width: 90%;
     margin: auto;
   }
   .amenities_wrapper {
@@ -1521,7 +1591,6 @@ main {
           transform: translate(-50%, -50%);
   position: absolute;
   width: 80%;
-  height: 600px;
   background: #EDF2FB;
   z-index: 10;
   border-radius: 10px;
@@ -1733,7 +1802,7 @@ main {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
-  width: 50%;
+  width: 70%;
   height: 600px;
   background: #EDF2FB;
   z-index: 10;
@@ -1745,8 +1814,14 @@ main {
   display: flex;
 }
 
+@media only screen and (max-width: 760px) {
+  .adminmodal {
+    width: 90%;
+  }
+}
+
 .adminmodal_container {
-  width: 70%;
+  width: 90%;
   margin: auto;
 }
 
@@ -1778,10 +1853,17 @@ main {
 .addModalWrapper {
   background-color: #006462;
   width: 100%;
+  padding: 20px;
+}
+
+.addModalWrapper h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 .addModalForm {
-  margin: 64px auto;
+  margin: 10px auto;
   width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1803,6 +1885,32 @@ main {
   height: 40px;
   margin-bottom: 15px;
   padding: 15px;
+}
+
+.addModalForm_amenitiesWrapper {
+  border: solid 2px red;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.addModalForm_amenitiesWrapper label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+}
+
+.addModalForm_amenitiesWrapper label input {
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
 }
 
 .footer_wrapper {

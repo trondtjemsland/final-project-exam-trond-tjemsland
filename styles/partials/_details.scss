@@ -106,7 +106,6 @@
         display: flex;
         justify-content: space-between;
         column-gap: 20px;
-        border:2px solid red;
         min-height: 350px;
     }
 
@@ -326,8 +325,7 @@
         justify-content: center;
         width: 95%;
         margin: 20px auto;
-        
-
+        row-gap: 20px;
     }
 
     
@@ -427,8 +425,13 @@
 //Enquiries Modal
 
 .enq_wrapper{
-    width: 95%;
-    margin: auto;
+    width: 45%;
+    margin: 20px auto;
+
+    & h1{
+        font-weight: 600;
+        font-size: 2rem;
+    }
 }
 .enq_form{
     display: flex;
@@ -454,7 +457,7 @@
  
     .details{
         &_sliderWrapper{
-            width: 80%;
+            width: 90%;
             margin: auto;
         }
 
@@ -470,7 +473,7 @@
         }
 
         &_hotelInfo{  
-            width: 80%;
+            width: 90%;
             margin: auto;
         }
     }
