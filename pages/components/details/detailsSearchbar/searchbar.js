@@ -6,9 +6,20 @@ function Searchbar({ hotels }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [modalOpen, setmodalOpen] = useState(false);
 
-	// let defaultDate = new Date();
-	// defaultDate.setDate(defaultDate.getDate());
+	const options = [
+		{ label: '1', id: 1 },
+		{ label: '2', id: 2 },
+		{ label: '3', id: 3 },
+		{ label: '4', id: 4 },
+		{ label: '5', id: 5 },
+		{ label: '6', id: 6 },
+	];
 
+	const handleChangeRooms = (e) => {
+		setRoomValue(e.target.roomValue);
+	};
+
+	const [roomValue, setRoomValue] = useState();
 	const [date, setDate] = useState();
 
 	const onSetDate = (event) => {
@@ -42,7 +53,28 @@ function Searchbar({ hotels }) {
 				</div>
 
 				<div className="detailsInput">
-					<input id="text" type="text" placeholder="Rooms" />
+					<select value={roomValue} onChange={handleChangeRooms}>
+						<option>Add rooms</option>
+						{options.map(({ id, label }) => {
+							return (
+								<option key={id} value={roomValue}>
+									{label}
+								</option>
+							);
+						})}
+					</select>
+				</div>
+				<div className="detailsInput">
+					<select value={roomValue} onChange={handleChangeRooms}>
+						<option>Add rooms</option>
+						{options.map(({ id, label }) => {
+							return (
+								<option key={id} value={roomValue}>
+									{label}
+								</option>
+							);
+						})}
+					</select>
 				</div>
 				<div className="buttonFormContainer">
 					<button

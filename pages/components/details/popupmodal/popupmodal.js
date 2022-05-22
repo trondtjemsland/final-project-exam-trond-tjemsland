@@ -26,6 +26,7 @@ const Modal = ({
 	const paymentLoader = ({ width = 200, quality = 100 }) => {
 		return `${imageUrl}?w=${width}&q=${quality || 75}`;
 	};
+
 	return (
 		<>
 			<div onClick={() => setIsOpen(false)} />
@@ -34,6 +35,7 @@ const Modal = ({
 					<button className="modal__close-btn" onClick={() => setIsOpen(false)}>
 						<Icon icon="ci:close-small" color="00000" height={46} />
 					</button>
+
 					<div className="modal_boxLeft">
 						<div className="thankuWrapper">
 							<div className="thankuWrapper_heading">
@@ -45,7 +47,7 @@ const Modal = ({
 									<div className="thankuWrapper_ImageWrapper">
 										<Image
 											src={imageUrl}
-											width={170}
+											width={240}
 											height={150}
 											loader={paymentLoader}
 										/>
