@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Link from 'next/Link';
 
-function HotelCards({ imageUrl, title, price, adress, id }) {
+function HotelCards({ imageUrl, title, price, adress, id, imgAlt }) {
 	const myLoader = ({ src }) => {
 		return imageUrl;
 	};
@@ -15,6 +15,7 @@ function HotelCards({ imageUrl, title, price, adress, id }) {
 					className="hotelCard_img"
 					loader={myLoader}
 					src={imageUrl}
+					alt={imgAlt}
 					width={430}
 					height={290}
 					layout="responsive"

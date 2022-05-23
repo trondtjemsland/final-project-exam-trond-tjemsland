@@ -77,7 +77,6 @@ export default function DetailSlider({
 						alt={imgAlt}
 						height={650}
 						width={800}
-						alt={imgAlt}
 					/>
 				</SwiperSlide>
 				<SwiperSlide>
