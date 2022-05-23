@@ -87,7 +87,7 @@ export default function DetailSlider({
 					<Image loader={myLoader4} src={sliderImg4} height={650} width={800} />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={sliderImg5} />
+					<Image loader={myLoader5} src={sliderImg5} height={650} width={800} />
 				</SwiperSlide>
 			</Swiper>
 		</div>

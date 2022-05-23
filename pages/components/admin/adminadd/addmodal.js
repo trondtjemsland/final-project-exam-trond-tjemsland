@@ -27,6 +27,26 @@ const SignupSchema = Yup.object().shape({
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
 		.required('Required'),
+	sliderImg1: Yup.string()
+		.min(2, 'Too Short!')
+		.max(350, 'Too Long!')
+		.required('Required'),
+	sliderImg2: Yup.string()
+		.min(2, 'Too Short!')
+		.max(350, 'Too Long!')
+		.required('Required'),
+	sliderImg3: Yup.string()
+		.min(2, 'Too Short!')
+		.max(350, 'Too Long!')
+		.required('Required'),
+	sliderImg4: Yup.string()
+		.min(2, 'Too Short!')
+		.max(350, 'Too Long!')
+		.required('Required'),
+	sliderImg5: Yup.string()
+		.min(2, 'Too Short!')
+		.max(350, 'Too Long!')
+		.required('Required'),
 });
 
 const AddModal = ({ setIsOpen, JWT }) => {
@@ -60,6 +80,13 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									aircon: false,
 									restaurant: false,
 									accsessibility: false,
+								},
+								sliderImages: {
+									sliderImg1: '',
+									sliderImg2: '',
+									sliderImg3: '',
+									sliderImg4: '',
+									sliderImg5: '',
 								},
 							}}
 							validationSchema={SignupSchema}
@@ -125,6 +152,46 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									{errors.imageUrl && touched.imageUrl ? (
 										<div>{errors.imageUrl}</div>
 									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImg1"
+										placeholder="sliderImg1"
+									/>
+									{errors.sliderImg1 && touched.sliderImg1 ? (
+										<div>{errors.sliderImg1}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImg2"
+										placeholder="sliderImg2"
+									/>
+									{errors.sliderImg2 && touched.sliderImg2 ? (
+										<div>{errors.sliderImg2}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImg3"
+										placeholder="sliderImg3"
+									/>
+									{errors.sliderImg3 && touched.sliderImg3 ? (
+										<div>{errors.sliderImg3}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImg4"
+										placeholder="sliderImg4"
+									/>
+									{errors.sliderImg4 && touched.sliderImg4 ? (
+										<div>{errors.sliderImg4}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImg5"
+										placeholder="sliderImg5"
+									/>
+									{errors.sliderImg5 && touched.sliderImg5 ? (
+										<div>{errors.sliderImg5}</div>
+									) : null}
 									<div className="addModalForm_amenitiesWrapper">
 										<label>
 											<Field type="checkbox" name="featuredHotel" />
@@ -160,7 +227,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										</label>
 										<label>
 											<Field type="checkbox" name="accsessibility" />
-											<span>accsessibility</span>
+											<span>ccsessibility</span>
 										</label>
 									</div>
 									<button className="addBtn" type="submit">
