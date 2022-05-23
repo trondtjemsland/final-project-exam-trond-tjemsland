@@ -55,7 +55,7 @@ function Typeahead({ hotels }) {
 							return val;
 						}
 					})
-					.map(({ title, price, imageUrl, id, adress }) => {
+					.map(({ title, price, imageUrl, id, adress, imgAlt }) => {
 						return (
 							<HotelCards
 								key={id}
@@ -64,6 +64,7 @@ function Typeahead({ hotels }) {
 								imageUrl={imageUrl}
 								adress={adress}
 								id={id}
+								imgAlt={imgAlt}
 							/>
 						);
 					})}

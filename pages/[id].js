@@ -107,7 +107,11 @@ const HotelDetails = ({ hotels }) => {
 					</div>
 
 					<div className="details_infoBox">
-						<DetailSlider imageUrl={imageUrl} sliderImages={sliderImages} />
+						<DetailSlider
+							imgAlt={imgAlt}
+							imageUrl={imageUrl}
+							sliderImages={sliderImages}
+						/>
 						<div className="details_hotelInfo">
 							<div className="mapContainer">
 								<Image
