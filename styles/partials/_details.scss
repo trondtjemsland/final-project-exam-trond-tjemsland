@@ -335,7 +335,11 @@
         & h3{
             color: $text-color;
             font-weight: 700;
-            font-size:2.20rem;
+            font-size:1.5rem;
+            @media only screen and (max-width: 450px) {
+                margin-right: 0;
+                text-align: center;
+              }
         }
     }
 }
@@ -365,6 +369,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        @media only screen and (max-width: 450px) {
+            margin-right: 0;
+          }
         
         & img{
             margin-right: 10px;

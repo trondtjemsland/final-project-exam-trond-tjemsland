@@ -33,7 +33,6 @@ function Searchbar({ hotels }) {
 					<input
 						id="date"
 						type="date"
-						// value={date.toLocaleDateString('en-CA')}
 						onChange={(e) => {
 							console.log(e.target.value);
 							setDate(e.target.value);
@@ -44,7 +43,6 @@ function Searchbar({ hotels }) {
 					<input
 						id="date"
 						type="date"
-						// value={date.toLocaleDateString('en-CA')}
 						onChange={(e) => {
 							console.log(e.target.value);
 							setDate(e.target.value);

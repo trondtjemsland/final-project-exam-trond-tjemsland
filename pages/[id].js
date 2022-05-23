@@ -38,12 +38,21 @@ export const getStaticProps = async (context) => {
 
 const HotelDetails = ({ hotels }) => {
 	const destructuredHotel = hotels;
-	const { title, imageUrl, sliderImages, price, adress, mapImg, reviews } =
-		destructuredHotel;
+	const {
+		title,
+		imageUrl,
+		sliderImages,
+		price,
+		adress,
+		mapImg,
+		reviews,
+		imgAlt,
+	} = destructuredHotel;
 
 	const myMapLoader = ({ src }) => {
 		return `${mapImg}?w=500&q=75`;
 	};
+
 	console.log('mapimg loader', mapImg);
 
 	console.log('hotels id', hotels);
@@ -105,9 +114,7 @@ const HotelDetails = ({ hotels }) => {
 									loader={myMapLoader}
 									src={mapImg}
 									layout="fill"
-									alt={
-										'Destination of the hotel Boulevard 77500 Cancun, Mexico'
-									}
+									alt={imgAlt}
 								/>
 								<div className="detailsAdress">
 									<Icon

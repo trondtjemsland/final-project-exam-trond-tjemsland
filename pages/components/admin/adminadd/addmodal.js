@@ -27,26 +27,60 @@ const SignupSchema = Yup.object().shape({
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
 		.required('Required'),
-	sliderImg1: Yup.string()
+	alt_tag: Yup.string()
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
 		.required('Required'),
-	sliderImg2: Yup.string()
+	imgAlt: Yup.string()
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
 		.required('Required'),
-	sliderImg3: Yup.string()
+	mapImg: Yup.string()
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
 		.required('Required'),
-	sliderImg4: Yup.string()
-		.min(2, 'Too Short!')
-		.max(350, 'Too Long!')
-		.required('Required'),
-	sliderImg5: Yup.string()
-		.min(2, 'Too Short!')
-		.max(350, 'Too Long!')
-		.required('Required'),
+
+	sliderImages: Yup.object().shape({
+		sliderImg1: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		sliderImg2: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		sliderImg3: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		sliderImg4: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		sliderImg5: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+	}),
+
+	reviews: Yup.object().shape({
+		name: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		guestImage: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		reviewText: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+		reviewTitle: Yup.string()
+			.min(2, 'Too Short!')
+			.max(350, 'Too Long!')
+			.required('Required'),
+	}),
 });
 
 const AddModal = ({ setIsOpen, JWT }) => {
@@ -69,6 +103,9 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								country: '',
 								adress: '',
 								imageUrl: '',
+								imgAlt: '',
+								alt_tag: '',
+								mapImg: '',
 								featuredHotel: false,
 								icons: {
 									wellness: false,
@@ -88,10 +125,17 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									sliderImg4: '',
 									sliderImg5: '',
 								},
+								reviews: {
+									name: '',
+									guestImage: '',
+									reviewText: '',
+									reviewTitle: '',
+								},
 							}}
 							validationSchema={SignupSchema}
 							onSubmit={(newHotel) => {
 								console.log(JWT);
+								console.log(newHotel);
 								async function postdata() {
 									let response = await axios.post(
 										`${BASEURL}/hotels`,
@@ -146,6 +190,14 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									) : null}
 									<Field
 										className="addModalForm_input"
+										name="mapImg"
+										placeholder="mapImg"
+									/>
+									{errors.mapImg && touched.mapImg ? (
+										<div>{errors.mapImg}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
 										name="imageUrl"
 										placeholder="imageUrl"
 									/>
@@ -154,7 +206,23 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									) : null}
 									<Field
 										className="addModalForm_input"
-										name="sliderImg1"
+										name="imgAlt"
+										placeholder="imgAlt"
+									/>
+									{errors.imgAlt && touched.imgAlt ? (
+										<div>{errors.imgAlt}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="alt_tag"
+										placeholder="alt_tag"
+									/>
+									{errors.alt_tag && touched.alt_tag ? (
+										<div>{errors.alt_tag}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImages.sliderImg1"
 										placeholder="sliderImg1"
 									/>
 									{errors.sliderImg1 && touched.sliderImg1 ? (
@@ -162,7 +230,15 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									) : null}
 									<Field
 										className="addModalForm_input"
-										name="sliderImg2"
+										name="sliderImages.sliderImg1"
+										placeholder="sliderImg1"
+									/>
+									{errors.sliderImg1 && touched.sliderImg1 ? (
+										<div>{errors.sliderImg1}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="sliderImages.sliderImg2"
 										placeholder="sliderImg2"
 									/>
 									{errors.sliderImg2 && touched.sliderImg2 ? (
@@ -170,7 +246,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									) : null}
 									<Field
 										className="addModalForm_input"
-										name="sliderImg3"
+										name="sliderImages.sliderImg3"
 										placeholder="sliderImg3"
 									/>
 									{errors.sliderImg3 && touched.sliderImg3 ? (
@@ -178,7 +254,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									) : null}
 									<Field
 										className="addModalForm_input"
-										name="sliderImg4"
+										name="sliderImages.sliderImg4"
 										placeholder="sliderImg4"
 									/>
 									{errors.sliderImg4 && touched.sliderImg4 ? (
@@ -186,7 +262,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									) : null}
 									<Field
 										className="addModalForm_input"
-										name="sliderImg5"
+										name="sliderImages.sliderImg5"
 										placeholder="sliderImg5"
 									/>
 									{errors.sliderImg5 && touched.sliderImg5 ? (
@@ -198,38 +274,74 @@ const AddModal = ({ setIsOpen, JWT }) => {
 											<span>Featured</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="wellness" />
+											<Field type="checkbox" name="icons.wellness" />
 											<span>Wellness</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="petFriendly" />
+											<Field type="checkbox" name="icons.petFriendly" />
 											<span>petFriendly</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="noSmoking" />
+											<Field type="checkbox" name="icons.noSmoking" />
 											<span>noSmoking</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="wifi" />
+											<Field type="checkbox" name="icons.wifi" />
 											<span>wifi</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="parking" />
+											<Field type="checkbox" name="icons.parking" />
 											<span>parking</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="aircon" />
+											<Field type="checkbox" name="icons.aircon" />
 											<span>aircon</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="restaurant" />
+											<Field type="checkbox" name="icons.restaurant" />
 											<span>restaurant</span>
 										</label>
 										<label>
-											<Field type="checkbox" name="accsessibility" />
-											<span>ccsessibility</span>
+											<Field type="checkbox" name="icons.accsessibility" />
+											<span>accsessibility</span>
+										</label>
+										<label>
+											<Field type="checkbox" name="icons.fitness" />
+											<span>fitness</span>
 										</label>
 									</div>
+									<Field
+										className="addModalForm_input"
+										name="reviews.name"
+										placeholder="name"
+									/>
+									{errors.name && touched.name ? (
+										<div>{errors.name}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="reviews.reviewText"
+										placeholder="reviewText"
+									/>
+									{errors.reviewText && touched.reviewText ? (
+										<div>{errors.reviewText}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="reviews.reviewTitle"
+										placeholder="reviewTitle"
+									/>
+									{errors.reviewTitle && touched.reviewTitle ? (
+										<div>{errors.reviewTitle}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="reviews.guestImage"
+										placeholder="guestImage"
+									/>
+									{errors.guestImage && touched.guestImage ? (
+										<div>{errors.guestImage}</div>
+									) : null}
 									<button className="addBtn" type="submit">
 										Submit
 									</button>

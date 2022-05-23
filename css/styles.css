@@ -1183,7 +1183,14 @@ main {
 .guestReviewContainer__title h3 {
   color: #212529;
   font-weight: 700;
-  font-size: 2.20rem;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .guestReviewContainer__title h3 {
+    margin-right: 0;
+    text-align: center;
+  }
 }
 
 .guestReview__wrapper {
@@ -1220,6 +1227,12 @@ main {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 450px) {
+  .guestReview__card {
+    margin-right: 0;
+  }
 }
 
 .guestReview__card img {
