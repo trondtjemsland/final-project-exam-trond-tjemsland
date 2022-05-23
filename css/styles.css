@@ -1042,6 +1042,14 @@ main {
       flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 600px) {
+  .amenities_wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .amenities {
   display: -webkit-box;
   display: -ms-flexbox;
