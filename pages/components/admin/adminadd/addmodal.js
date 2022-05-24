@@ -63,24 +63,24 @@ const SignupSchema = Yup.object().shape({
 			.required('Required'),
 	}),
 
-	reviews: Yup.object().shape({
-		name: Yup.string()
-			.min(2, 'Too Short!')
-			.max(350, 'Too Long!')
-			.required('Required'),
-		guestImage: Yup.string()
-			.min(2, 'Too Short!')
-			.max(350, 'Too Long!')
-			.required('Required'),
-		reviewText: Yup.string()
-			.min(2, 'Too Short!')
-			.max(350, 'Too Long!')
-			.required('Required'),
-		reviewTitle: Yup.string()
-			.min(2, 'Too Short!')
-			.max(350, 'Too Long!')
-			.required('Required'),
-	}),
+	// reviews: Yup.object().shape({
+	// 	name: Yup.string()
+	// 		.min(2, 'Too Short!')
+	// 		.max(350, 'Too Long!')
+	// 		.required('Required'),
+	// 	guestImage: Yup.string()
+	// 		.min(2, 'Too Short!')
+	// 		.max(350, 'Too Long!')
+	// 		.required('Required'),
+	// 	reviewText: Yup.string()
+	// 		.min(2, 'Too Short!')
+	// 		.max(350, 'Too Long!')
+	// 		.required('Required'),
+	// 	reviewTitle: Yup.string()
+	// 		.min(2, 'Too Short!')
+	// 		.max(350, 'Too Long!')
+	// 		.required('Required'),
+	// }),
 });
 
 const AddModal = ({ setIsOpen, JWT }) => {
@@ -125,7 +125,14 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									sliderImg4: '',
 									sliderImg5: '',
 								},
-								reviews: [],
+								reviews: [
+									{
+										name: '',
+										guestImage: '',
+										reviewText: '',
+										reviewTitle: '',
+									},
+								],
 							}}
 							validationSchema={SignupSchema}
 							onSubmit={(newHotel) => {
@@ -223,14 +230,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									{errors.sliderImg1 && touched.sliderImg1 ? (
 										<div>{errors.sliderImg1}</div>
 									) : null}
-									<Field
-										className="addModalForm_input"
-										name="sliderImages.sliderImg1"
-										placeholder="sliderImg1"
-									/>
-									{errors.sliderImg1 && touched.sliderImg1 ? (
-										<div>{errors.sliderImg1}</div>
-									) : null}
+
 									<Field
 										className="addModalForm_input"
 										name="sliderImages.sliderImg2"
@@ -364,6 +364,9 @@ const AddModal = ({ setIsOpen, JWT }) => {
 											</div>
 										)}
 									/>
+									<button className="contactBtn" type="submit">
+										Submit
+									</button>
 								</Form>
 							)}
 						</Formik>
