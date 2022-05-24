@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 function HotelCards({ imageUrl, title, price, adress, id, imgAlt }) {
 	const myLoader = ({ src }) => {

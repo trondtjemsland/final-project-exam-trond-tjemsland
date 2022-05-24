@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import { BASEURL } from '../../lib/variables';
 
@@ -125,12 +125,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									sliderImg4: '',
 									sliderImg5: '',
 								},
-								reviews: {
-									name: '',
-									guestImage: '',
-									reviewText: '',
-									reviewTitle: '',
-								},
+								reviews: [],
 							}}
 							validationSchema={SignupSchema}
 							onSubmit={(newHotel) => {
@@ -153,7 +148,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								}
 								postdata();
 							}}>
-							{({ errors, touched }) => (
+							{({ errors, touched, values }) => (
 								<Form className="addModalForm">
 									<Field
 										className="addModalForm_input"
@@ -310,41 +305,65 @@ const AddModal = ({ setIsOpen, JWT }) => {
 											<span>fitness</span>
 										</label>
 									</div>
-									<Field
-										className="addModalForm_input"
-										name="reviews.name"
-										placeholder="name"
+									<FieldArray
+										name="reviews"
+										render={(arrayHelpers) => (
+											<div className="guestReviewsModalForm">
+												{values.reviews && values.reviews.length > 0 ? (
+													values.reviews.map((review, index) => (
+														<div
+															className="guestReviewsModalForm_container"
+															key={index}>
+															<Field
+																className="guestReviewsModalForm_input"
+																name={`reviews.${index}.name`}
+																placeholder="Name"
+															/>
+															<Field
+																name={`reviews.${index}.guestImage`}
+																placeholder="guestImage"
+																className="guestReviewsModalForm_input"
+															/>
+															<Field
+																name={`reviews.${index}.reviewTitle`}
+																placeholder="reviewTitle"
+																className="guestReviewsModalForm_input"
+															/>
+															<Field
+																name={`reviews.${index}.reviewText`}
+																placeholder="reviewText"
+																className="guestReviewsModalForm_input"
+															/>
+															<div className="guestReviewsModalForm_btnWrapper">
+																<button
+																	className="guestReviewsModalForm_btn"
+																	onClick={() =>
+																		arrayHelpers.remove(index, '')
+																	}>
+																	-
+																</button>
+																<button
+																	className="guestReviewsModalForm_btn"
+																	type="button"
+																	onClick={() =>
+																		arrayHelpers.insert(index, '')
+																	}>
+																	+
+																</button>
+															</div>
+														</div>
+													))
+												) : (
+													<button
+														className="guestReviewsModalForm_btn"
+														type="button"
+														onClick={() => arrayHelpers.push('')}>
+														Add a review
+													</button>
+												)}
+											</div>
+										)}
 									/>
-									{errors.name && touched.name ? (
-										<div>{errors.name}</div>
-									) : null}
-									<Field
-										className="addModalForm_input"
-										name="reviews.reviewText"
-										placeholder="reviewText"
-									/>
-									{errors.reviewText && touched.reviewText ? (
-										<div>{errors.reviewText}</div>
-									) : null}
-									<Field
-										className="addModalForm_input"
-										name="reviews.reviewTitle"
-										placeholder="reviewTitle"
-									/>
-									{errors.reviewTitle && touched.reviewTitle ? (
-										<div>{errors.reviewTitle}</div>
-									) : null}
-									<Field
-										className="addModalForm_input"
-										name="reviews.guestImage"
-										placeholder="guestImage"
-									/>
-									{errors.guestImage && touched.guestImage ? (
-										<div>{errors.guestImage}</div>
-									) : null}
-									<button className="addBtn" type="submit">
-										Submit
-									</button>
 								</Form>
 							)}
 						</Formik>

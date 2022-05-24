@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 // Iconify
 
@@ -14,7 +14,13 @@ const GuestReviews = ({ reviews }) => {
 					return (
 						<div className="guestReview__card" key={id}>
 							<div className="guestReview__top">
-								<img src={guestImage} alt={name} className="guestReview__img" />
+								<img
+									src={guestImage}
+									alt={name}
+									// width={60}
+									// height={60}
+									className="guestReview__img"
+								/>
 								<div>
 									<p>{name}</p>
 									<h4 className="guestReview__title">{reviewTitle}</h4>

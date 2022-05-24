@@ -48,3 +48,36 @@
        }
     }
 }
+
+.guestReviewsModalForm{
+   &_container{
+    display: flex;
+    flex-direction: column;
+   }
+
+   &_btnWrapper{
+       display: flex;
+    
+   }
+   &_btn{
+       height: 50px;
+       width: 80px;
+       margin-top: 10px;
+       margin-right: 10px;
+       background-color: $primary-button;
+       align-items: center;
+       display: flex;
+       justify-content: center;
+       font-size: .875rem;
+       padding: 10px;
+       font-weight: 600;
+
+   }
+    &_input{
+        height: 40px;
+        border-radius: 2px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+}
