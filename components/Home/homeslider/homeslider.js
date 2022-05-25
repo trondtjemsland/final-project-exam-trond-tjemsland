@@ -33,9 +33,9 @@ export default function Carousel({ FeaturedHotelCards }) {
 				};
 				return (
 					<div key={id} className="item" data-value="1">
-						<div className="hotelCard">
+						<div className="hotelCardSlider">
 							<Image
-								className="hotelCard_img"
+								className="hotelCardSlider_img"
 								loader={myLoader}
 								src={imageUrl}
 								alt={imgAlt}
@@ -44,17 +44,17 @@ export default function Carousel({ FeaturedHotelCards }) {
 								layout="responsive"
 								priority
 							/>
-							<div className="hotelCard_textBox">
+							<div className="hotelCardSlider_textBox">
 								<div className="hotelCard_box1">
-									<h3 className="hotelCard_title">{title}</h3>
-									<p className="hotelCard_adress">{adress}</p>
-									<div className="hotelCard_rating">
+									<h3 className="hotelCardSlider_title">{title}</h3>
+									<p className="hotelCardSlider_adress">{adress}</p>
+									<div className="hotelCardSlider_rating">
 										<p>4.5</p>
 										<Icon className="ratingIcon" icon="fa-solid:star" />
 									</div>
 								</div>
-								<div className="hotelCard_box2">
-									<p className="hotelCard_price">
+								<div className="hotelCardSlider_box2">
+									<p className="hotelCardSlider_price">
 										${price}
 										<span>/day</span>
 									</p>
