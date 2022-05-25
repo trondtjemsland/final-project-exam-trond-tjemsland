@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Footer from './components/footer/footer';
-import { Navbar } from './components/header/header';
+import Footer from '../components/footer/footer';
+import { Navbar } from '../components/header/header';
 import Image from 'next/image';
 
 import React from 'react';
@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { BASEURL } from './components/lib/variables';
+import { BASEURL } from '../components/lib/variables';
 
 const SignupSchema = Yup.object().shape({
 	firstname: Yup.string()

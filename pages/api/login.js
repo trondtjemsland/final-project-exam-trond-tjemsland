@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setCookie } from 'nookies';
-import { BASEURL } from '../components/lib/variables';
+import { BASEURL } from '../../components/lib/variables';
 
 export default async (req, res) => {
 	const { password, identifier } = req.body;

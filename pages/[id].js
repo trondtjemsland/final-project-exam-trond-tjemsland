@@ -1,14 +1,15 @@
-import { Navbar } from './components/header/header';
+import { Navbar } from '../components/header/header';
 import Head from 'next/head';
-import Footer from './components/footer/footer';
-import DetailSlider from './components/Hotels/slider/slider';
+import Footer from '../components/footer/footer';
+import DetailSlider from '../components/Hotels/slider/slider';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
-import Amenities from './components/Hotels/amenities/amenities';
-import Searchbar from './components/details/detailsSearchbar/searchbar';
-import GuestReviews from './components/details/guestreviews/guestreviews';
-// import Activities from './components/details/activities/activities';
-import { BASEURL } from './components/lib/variables';
+import Amenities from '../components/Hotels/amenities/amenities';
+import Searchbar from '../components/details/detailsSearchbar/searchbar';
+
+import GuestReviews from '../components/details/guestreviews/guestreviews';
+// import Activities from '../components/details/activities/activities';
+import { BASEURL } from '../components/lib/variables';
 
 export const getStaticPaths = async () => {
 	const res = await fetch(BASEURL + '/hotels');

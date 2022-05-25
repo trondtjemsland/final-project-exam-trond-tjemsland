@@ -2,11 +2,11 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import Footer from './components/footer/footer';
-import Herobannerhotels from './components/Hotels/herobanner_hotels/herobannerhotels';
-import { Navbar } from './components/header/header';
-import Typeahead from './components/typeahead/typeahead';
-import { BASEURL } from './components/lib/variables';
+import Footer from '../components/footer/footer';
+import Herobannerhotels from '../components/Hotels/herobanner_hotels/herobannerhotels';
+import { Navbar } from '../components/header/header';
+import Typeahead from '../components/typeahead/typeahead';
+import { BASEURL } from '../components/lib/variables';
 
 export const getStaticProps = async () => {
 	const res = await fetch(BASEURL + '/hotels');

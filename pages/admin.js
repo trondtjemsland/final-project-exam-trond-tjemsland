@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { Navbar } from './components/header/header';
-import Footer from './components/footer/footer';
+import { Navbar } from '../components/header/header';
+import Footer from '../components/footer/footer';
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import Table from '@mui/material/Table';
@@ -20,8 +20,8 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
-import AddModal from './components/admin/adminadd/addmodal';
-import { BASEURL } from './components/lib/variables';
+import AddModal from '../components/admin/adminadd/addmodal';
+import { BASEURL } from '../components/lib/variables';
 
 // function createData(name, price, id, location) {
 // 	return { name, price, id, location };

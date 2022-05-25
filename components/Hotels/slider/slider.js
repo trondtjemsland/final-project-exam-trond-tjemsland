@@ -17,9 +17,7 @@ export default function DetailSlider({
 	sliderImages: { sliderImg1, sliderImg2, sliderImg3, sliderImg4, sliderImg5 },
 }) {
 	const [thumbsSwiper, setThumbsSwiper] = useState(null);
-	const myMapLoader = ({ src }) => {
-		return `${mapImg}?w=500&q=75`;
-	};
+
 	const myLoader = ({ src }) => {
 		return `${imageUrl}?w=500&q=75`;
 	};
@@ -59,6 +57,7 @@ export default function DetailSlider({
 						alt={imgAlt}
 						height={650}
 						width={800}
+						priority
 					/>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -68,6 +67,7 @@ export default function DetailSlider({
 						alt={imgAlt}
 						height={650}
 						width={800}
+						priority
 					/>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -77,6 +77,7 @@ export default function DetailSlider({
 						alt={imgAlt}
 						height={650}
 						width={800}
+						priority
 					/>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -86,6 +87,7 @@ export default function DetailSlider({
 						alt={imgAlt}
 						height={650}
 						width={800}
+						priority
 					/>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -95,6 +97,7 @@ export default function DetailSlider({
 						height={650}
 						width={800}
 						alt={imgAlt}
+						priority
 					/>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -104,6 +107,7 @@ export default function DetailSlider({
 						height={650}
 						width={800}
 						alt={imgAlt}
+						priority
 					/>
 				</SwiperSlide>
 			</Swiper>

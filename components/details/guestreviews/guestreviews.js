@@ -11,15 +11,20 @@ const GuestReviews = ({ reviews }) => {
 
 			<div className="guestReview__wrapper">
 				{reviews.map(({ id, name, guestImg, reviewTitle, reviewText }) => {
+					const guestImgLoader = ({ src }) => {
+						return `${guestImg}?w=500&q=75`;
+					};
 					return (
 						<div className="guestReview__card" key={id}>
 							<div className="guestReview__top">
-								<img
+								<Image
 									src={guestImg}
 									alt={name}
 									width={60}
 									height={60}
 									className="guestReview__img"
+									loader={guestImgLoader}
+									priority
 								/>
 								<div>
 									<p>{name}</p>
