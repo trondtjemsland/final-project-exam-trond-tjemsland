@@ -4,7 +4,6 @@ import Footer from '../components/footer/footer';
 import HeroBanner from '../components/Home/herobanner_home';
 import Homeinfo from '../components/Home/homeinfo/homeinfo';
 import { BASEURL } from '../components/lib/variables';
-import FeaturedHotelCards from '../components/Home/featured/featuredcards';
 
 import Carousel from '../components/Home/homeslider/homeslider';
 

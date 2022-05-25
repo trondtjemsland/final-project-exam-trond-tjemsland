@@ -13,30 +13,19 @@ const responsive = {
 
 export default function Carousel({ FeaturedHotelCards }) {
 	console.log(FeaturedHotelCards);
-	// const items = [
-	// 	<div className="item" data-value="1">
-	// 		1
-	// 	</div>,
-	// 	<div className="item" data-value="2">
-	// 		2
-	// 	</div>,
-	// 	<div className="item" data-value="3">
-	// 		3
-	// 	</div>,
-	// ];
 
 	const sliderItems = FeaturedHotelCards.map(
 		({ title, adress, imgAlt, imageUrl, isFeatured, price, id }) => {
 			if (isFeatured) {
-				const myLoader = ({ src }) => {
-					return imageUrl;
+				const myCarouselLoader = ({ src }) => {
+					return `${imageUrl}?w=500&q=75`;
 				};
 				return (
 					<div key={id} className="item" data-value="1">
 						<div className="hotelCardSlider">
 							<Image
 								className="hotelCardSlider_img"
-								loader={myLoader}
+								loader={myCarouselLoader}
 								src={imageUrl}
 								alt={imgAlt}
 								width={480}

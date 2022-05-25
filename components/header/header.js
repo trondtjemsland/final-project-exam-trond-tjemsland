@@ -39,8 +39,8 @@ export const Navbar = () => {
 							Contact
 						</a>
 					</Link>
-					<Link href="#">
-						<a className={`navBarLinks`}>Reviews</a>
+					<Link href="/index">
+						<a className={`navBarLinks`}>Home</a>
 					</Link>
 				</div>
 				<div className={`hamburgerNav ${active ? 'showmenu' : 'hidemenu'}`}>
@@ -50,8 +50,8 @@ export const Navbar = () => {
 					<Link href="/contact">
 						<a className={`navBarLinks hamburgerNav_links`}>Contact</a>
 					</Link>
-					<Link href="#">
-						<a className={`navBarLinks hamburgerNav_links`}>Reviews</a>
+					<Link href="/">
+						<a className={`navBarLinks hamburgerNav_links`}>Home</a>
 					</Link>
 					<Icon
 						icon="bi:x"
