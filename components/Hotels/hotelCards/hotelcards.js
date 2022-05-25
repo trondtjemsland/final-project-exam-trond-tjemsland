@@ -3,9 +3,17 @@ import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 
-function HotelCards({ imageUrl, title, price, adress, id, imgAlt }) {
+function HotelCards({
+	imageUrl,
+	title,
+	price,
+	adress,
+	id,
+	imgAlt,
+	isFeatured,
+}) {
 	const myLoader = ({ src }) => {
-		return imageUrl;
+		return `${imageUrl}?w=500&q=75`;
 	};
 
 	return (
@@ -19,6 +27,7 @@ function HotelCards({ imageUrl, title, price, adress, id, imgAlt }) {
 					width={430}
 					height={290}
 					layout="responsive"
+					priority
 				/>
 				<div className="hotelCard_textBox">
 					<div className="hotelCard_box1">

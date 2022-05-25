@@ -2,9 +2,11 @@ import Head from 'next/head';
 import Dazeclub from '../components/Home/dazeclub/dazeclub';
 import Footer from '../components/footer/footer';
 import HeroBanner from '../components/Home/herobanner_home';
-import Homecards from '../components/Home/homecards/homecards';
 import Homeinfo from '../components/Home/homeinfo/homeinfo';
 import { BASEURL } from '../components/lib/variables';
+import FeaturedHotelCards from '../components/Home/featured/featuredcards';
+
+import Carousel from '../components/Home/homeslider/homeslider';
 
 export const getStaticProps = async () => {
 	const res = await fetch(BASEURL + '/hotels');
@@ -15,7 +17,7 @@ export const getStaticProps = async () => {
 	};
 };
 
-export default function Home() {
+export default function Home({ hotels }) {
 	return (
 		<>
 			<>
@@ -48,7 +50,7 @@ export default function Home() {
 							Hotels we recommend for our customers
 						</h3>
 					</div>
-					<Homecards />
+					<Carousel FeaturedHotelCards={hotels} />
 					<Homeinfo />
 					<Dazeclub />
 				</main>
