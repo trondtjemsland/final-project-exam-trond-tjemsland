@@ -1,1 +1,1 @@
-export const BASEURL = 'http://localhost:1337';
+export const BASEURL = 'https://thelasttestfinalexam.herokuapp.com';

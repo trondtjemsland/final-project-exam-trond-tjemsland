@@ -31,7 +31,11 @@ function Footer() {
 				</div>
 			</div>
 			<div className="footer_box2">
-				<Image src="/footerLogo.svg" width="180px" height="135px"></Image>
+				<Image
+					src="/footerLogo.svg"
+					width="180px"
+					height="135px"
+					alt="Palmtree logo of holidaze"></Image>
 				<p>For educational use only</p>
 			</div>
 		</div>

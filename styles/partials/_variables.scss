@@ -21,8 +21,14 @@ $largText:1.5rem;
 $headingSmallText:3rem;
 $headingMedium:4rem;
 $headingLarge:6rem;
+
+
 //BUTTONS
 
-
+:root {
+    --bounce: translateY(-1px);
+    --transition: 0.1s;
+    --bgcolor: #F49402;
+  }
 
 

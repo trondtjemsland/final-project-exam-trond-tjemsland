@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MessageModal from '../enquiriesmodal/enquiriesmodal';
 import Modal from '../popupmodal/popupmodal';
+import { Icon } from '@iconify/react';
 
 function Searchbar({ hotels }) {
 	const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,12 @@ function Searchbar({ hotels }) {
 	};
 
 	const [roomValue, setRoomValue] = useState();
-	const [date, setDate] = useState();
+	const [dateOne, setDateOne] = useState();
+	const [dateTwo, setDateTwo] = useState();
 
 	const onSetDate = (event) => {
-		setDate(new Date(event.target.value));
+		setDateOne(new Date(event.target.value));
+		setDateTwo(new Date(event.target.value));
 	};
 
 	return (
@@ -35,7 +38,7 @@ function Searchbar({ hotels }) {
 						type="date"
 						onChange={(e) => {
 							console.log(e.target.value);
-							setDate(e.target.value);
+							setDateOne(e.target.value);
 						}}
 					/>
 				</div>
@@ -45,7 +48,7 @@ function Searchbar({ hotels }) {
 						type="date"
 						onChange={(e) => {
 							console.log(e.target.value);
-							setDate(e.target.value);
+							setDateTwo(e.target.value);
 						}}
 					/>
 				</div>
@@ -64,7 +67,7 @@ function Searchbar({ hotels }) {
 				</div>
 				<div className="detailsInput">
 					<select value={roomValue} onChange={handleChangeRooms}>
-						<option>Add rooms</option>
+						<option>Add Guests</option>
 						{options.map(({ id, label }) => {
 							return (
 								<option key={id} value={roomValue}>
@@ -81,7 +84,12 @@ function Searchbar({ hotels }) {
 						Book Now
 					</button>
 					{isOpen && (
-						<Modal date={date} hotels={hotels} setIsOpen={setIsOpen} />
+						<Modal
+							dateOne={dateOne}
+							dateTwo={dateTwo}
+							hotels={hotels}
+							setIsOpen={setIsOpen}
+						/>
 					)}
 					<button
 						onClick={() => setmodalOpen(true)}

@@ -19,8 +19,9 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Modal = ({
-	date,
-	hotels: { title, imageUrl, price, adress },
+	dateOne,
+	dateTwo,
+	hotels: { title, imageUrl, price, adress, imgAlt },
 	setIsOpen,
 }) => {
 	const paymentLoader = ({ width = 200, quality = 100 }) => {
@@ -50,14 +51,15 @@ const Modal = ({
 											width={240}
 											height={150}
 											loader={paymentLoader}
+											alt={imgAlt}
 										/>
 									</div>
 									<div className="thankuWrapper_infoWrapper">
 										<h2>{title}</h2>
 										<p>{adress}</p>
 										<div className="thankuWrapper_infoWrapper_dates">
-											<p>{moment(date).format('MMM Do YY')}</p>
-											<p>{moment(date).format('MMM Do YY')}</p>
+											<p>{moment(dateOne).format('MMM Do YY')}</p>
+											<p>{moment(dateTwo).format('MMM Do YY')}</p>
 										</div>
 										<div className="thankuWrapper_priceWrapper">
 											<p>${price}</p>

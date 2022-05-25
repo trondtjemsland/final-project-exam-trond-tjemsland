@@ -10,15 +10,15 @@ const GuestReviews = ({ reviews }) => {
 			</div>
 
 			<div className="guestReview__wrapper">
-				{reviews.map(({ id, name, guestImage, reviewTitle, reviewText }) => {
+				{reviews.map(({ id, name, guestImg, reviewTitle, reviewText }) => {
 					return (
 						<div className="guestReview__card" key={id}>
 							<div className="guestReview__top">
 								<img
-									src={guestImage}
+									src={guestImg}
 									alt={name}
-									// width={60}
-									// height={60}
+									width={60}
+									height={60}
 									className="guestReview__img"
 								/>
 								<div>

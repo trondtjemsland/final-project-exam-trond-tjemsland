@@ -61,6 +61,7 @@ export default function Home() {
 							className="contactImg"
 							src="/img/hotelsbg.png"
 							layout="fill"
+							alt="Green background with the logo of holdidaze repeated multipel times"
 						/>
 						<h1>We are here to help</h1>
 					</div>

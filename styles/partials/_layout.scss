@@ -24,4 +24,11 @@ main{
     max-width: 1440px;
 
 }
+button{
+    &:hover {
+        transform: var(--bounce);
+        transition: var(--transition);
+        background-color: var(--bgcolor);
+    }
+}
 
