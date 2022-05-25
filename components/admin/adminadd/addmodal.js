@@ -27,10 +27,7 @@ const SignupSchema = Yup.object().shape({
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
 		.required('Required'),
-	alt_tag: Yup.string()
-		.min(2, 'Too Short!')
-		.max(350, 'Too Long!')
-		.required('Required'),
+
 	imgAlt: Yup.string()
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
@@ -104,7 +101,6 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								adress: '',
 								imageUrl: '',
 								imgAlt: '',
-								alt_tag: '',
 								mapImg: '',
 								featuredHotel: false,
 								icons: {
@@ -214,14 +210,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									{errors.imgAlt && touched.imgAlt ? (
 										<div>{errors.imgAlt}</div>
 									) : null}
-									<Field
-										className="addModalForm_input"
-										name="alt_tag"
-										placeholder="alt_tag"
-									/>
-									{errors.alt_tag && touched.alt_tag ? (
-										<div>{errors.alt_tag}</div>
-									) : null}
+
 									<Field
 										className="addModalForm_input"
 										name="sliderImages.sliderImg1"
