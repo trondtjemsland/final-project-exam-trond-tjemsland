@@ -15,6 +15,18 @@ function Activities() {
 					<p>Activities</p>
 				</div>
 			</div>
+
+			<div className="activities_box3">
+				<Image
+					src={'/img/market.png'}
+					height={500}
+					width={430}
+					alt="The market in Marrakech"
+				/>
+				<div className="activities_textBox">
+					<p>Activities</p>
+				</div>
+			</div>
 			<div className="activities_box2">
 				<div className="activities_middleBox">
 					<Image
@@ -37,17 +49,6 @@ function Activities() {
 					<div className="activities_textBox">
 						<p>Activities</p>
 					</div>
-				</div>
-			</div>
-			<div className="activities_box3">
-				<Image
-					src={'/img/market.png'}
-					height={500}
-					width={430}
-					alt="The market in Marrakech"
-				/>
-				<div className="activities_textBox">
-					<p>Activities</p>
 				</div>
 			</div>
 		</div>
