@@ -23,6 +23,7 @@ const SignupSchema = Yup.object().shape({
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
 		.required('Required'),
+
 	imageUrl: Yup.string()
 		.min(2, 'Too Short!')
 		.max(350, 'Too Long!')
@@ -83,7 +84,6 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								imageUrl: '',
 								imgAlt: '',
 								mapImg: '',
-								description: '',
 								featuredHotel: false,
 								icons: {
 									wellness: false,
@@ -168,14 +168,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 									{errors.adress && touched.adress ? (
 										<div className="error">{errors.adress}</div>
 									) : null}
-									<Field
-										className="addModalForm_input"
-										name="description"
-										placeholder="Adress"
-									/>
-									{errors.description && touched.description ? (
-										<div className="error">{errors.description}</div>
-									) : null}
+
 									<Field
 										className="addModalForm_input"
 										name="mapImg"
