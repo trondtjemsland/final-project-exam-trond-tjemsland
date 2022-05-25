@@ -101,7 +101,7 @@ export default function Home() {
 										className="inputField"
 									/>
 									{errors.firstname && touched.firstname ? (
-										<div>{errors.firstname}</div>
+										<div className="error">{errors.firstname}</div>
 									) : null}
 									<Field
 										name="lastname"
@@ -109,7 +109,7 @@ export default function Home() {
 										className="inputField"
 									/>
 									{errors.lastname && touched.lastname ? (
-										<div>{errors.lastname}</div>
+										<div className="error">{errors.lastname}</div>
 									) : null}
 									<Field
 										name="email"
@@ -118,7 +118,7 @@ export default function Home() {
 										className="inputField"
 									/>
 									{errors.email && touched.email ? (
-										<div>{errors.email}</div>
+										<div className="error">{errors.email}</div>
 									) : null}
 									<Field
 										type="textarea"
@@ -128,7 +128,7 @@ export default function Home() {
 										className="textareaInput"
 									/>
 									{errors.message && touched.message ? (
-										<div>{errors.message}</div>
+										<div className="error">{errors.message}</div>
 									) : null}
 
 									<button className="contactBtn" type="submit">

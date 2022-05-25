@@ -10,16 +10,16 @@ const SignupSchema = Yup.object().shape({
 	name: Yup.string()
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
-		.required('Required'),
+		.required('Name Required'),
 	message: Yup.string()
-		.min(2, 'Too Short!')
-		.max(50, 'Too Long!')
-		.required('Required'),
+		.min(10, 'Too Short!')
+		.max(120, 'Too Long!')
+		.required('Message to short'),
 	phonenumber: Yup.string()
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
-		.required('Required'),
-	email: Yup.string().email('Invalid email').required('Required'),
+		.required('Phonenumber Required'),
+	email: Yup.string().email('Invalid email').required('Valid Email Required'),
 });
 
 const MessageModal = ({ setIsOpen }) => {
@@ -63,7 +63,7 @@ const MessageModal = ({ setIsOpen }) => {
 										placeholder="Enter your name"
 									/>
 									{errors.name && touched.name ? (
-										<div>{errors.name}</div>
+										<div className="error">{errors.name}</div>
 									) : null}
 									<Field
 										className="enq_input"
@@ -71,7 +71,7 @@ const MessageModal = ({ setIsOpen }) => {
 										placeholder="Enter your phonenumber"
 									/>
 									{errors.phonenumber && touched.phonenumber ? (
-										<div>{errors.phonenumber}</div>
+										<div className="error">{errors.phonenumber}</div>
 									) : null}
 									<Field
 										className="enq_input"
@@ -80,7 +80,7 @@ const MessageModal = ({ setIsOpen }) => {
 										placeholder="Enter your email"
 									/>
 									{errors.email && touched.email ? (
-										<div>{errors.email}</div>
+										<div className="error">{errors.email}</div>
 									) : null}
 									<Field
 										type="textarea"
@@ -90,7 +90,7 @@ const MessageModal = ({ setIsOpen }) => {
 										className="messageInput"
 									/>
 									{errors.textarea && touched.textarea ? (
-										<div>{errors.textarea}</div>
+										<div className="error">{errors.textarea}</div>
 									) : null}
 									<button className="contactBtn" type="submit">
 										Submit

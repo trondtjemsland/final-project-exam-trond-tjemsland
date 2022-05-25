@@ -7,15 +7,22 @@ import Image from 'next/image';
 import moment from 'moment';
 
 const SignupSchema = Yup.object().shape({
-	firstName: Yup.string()
+	cardName: Yup.string()
 		.min(2, 'Too Short!')
 		.max(50, 'Too Long!')
-		.required('Required'),
-	lastName: Yup.string()
+		.required('Name of cardholder Required'),
+	cardNumber: Yup.string()
+		.min(15, 'Too Short!')
+		.max(17, 'Too Long!')
+		.required('Cardnumber Required max 16'),
+	code: Yup.string()
+		.min(3, 'Too Short!')
+		.max(3, 'Too Long!')
+		.required('CVV Required'),
+	month: Yup.string()
 		.min(2, 'Too Short!')
-		.max(50, 'Too Long!')
-		.required('Required'),
-	email: Yup.string().email('Invalid email').required('Required'),
+		.max(8, 'Too Long!')
+		.required('Valid date Required'),
 });
 
 const Modal = ({
@@ -84,9 +91,10 @@ const Modal = ({
 								<h1 className="payment_heading">Payment</h1>
 								<Formik
 									initialValues={{
-										firstName: '',
-										lastName: '',
-										email: '',
+										cardName: '',
+										cardNumber: '',
+										code: '',
+										month: '',
 									}}
 									validationSchema={SignupSchema}
 									onSubmit={(values) => {
@@ -95,16 +103,16 @@ const Modal = ({
 									}}>
 									{({ errors, touched }) => (
 										<Form className="paymentForm">
-											<label htmlFor="firstName">Cardholders Name</label>
+											<label htmlFor="cardName">Cardholders Name</label>
 											<Field
-												id="firstName"
-												name="firstName"
+												id="cardName"
+												name="cardName"
 												placeholder="Name on card"
 												lable="Cardholders name"
 												className="paymentInputField"
 											/>
-											{errors.firstName && touched.firstName ? (
-												<div>{errors.firstName}</div>
+											{errors.cardName && touched.cardName ? (
+												<div className="error">{errors.cardName}</div>
 											) : null}
 											<label htmlFor="firstName">Cardnumber</label>
 											<Field
@@ -113,34 +121,34 @@ const Modal = ({
 												placeholder="---- ---- ---- ----"
 												className="paymentInputField"
 											/>
-											{errors.lastName && touched.lastName ? (
-												<div>{errors.lastName}</div>
+											{errors.cardNumber && touched.cardNumber ? (
+												<div className="error">{errors.cardNumber}</div>
 											) : null}
 											<div className="paymentForm_codebox">
 												<div className="test">
 													<label htmlFor="expiryDate">Expiry Date</label>
 													<Field
-														name="expiryDate"
+														name="month"
 														id="expiryDate"
 														type="text"
 														placeholder="Mm/Yy"
 														className="paymentInputField_code"
 													/>
-													{errors.email && touched.email ? (
-														<div>{errors.email}</div>
+													{errors.month && touched.code ? (
+														<div className="error">{errors.code}</div>
 													) : null}
 												</div>
 												<div className="test">
 													<label htmlFor="cvv">CVV</label>
 													<Field
-														name="cvv"
+														name="code"
 														id="cvv"
 														type="text"
 														placeholder="Code"
 														className="paymentInputField_code"
 													/>
-													{errors.email && touched.email ? (
-														<div>{errors.email}</div>
+													{errors.code && touched.code ? (
+														<div className="error">{errors.code}</div>
 													) : null}
 												</div>
 											</div>

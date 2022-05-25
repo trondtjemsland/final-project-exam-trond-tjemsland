@@ -59,25 +59,6 @@ const SignupSchema = Yup.object().shape({
 			.max(350, 'Too Long!')
 			.required('Required'),
 	}),
-
-	// reviews: Yup.object().shape({
-	// 	name: Yup.string()
-	// 		.min(2, 'Too Short!')
-	// 		.max(350, 'Too Long!')
-	// 		.required('Required'),
-	// 	guestImage: Yup.string()
-	// 		.min(2, 'Too Short!')
-	// 		.max(350, 'Too Long!')
-	// 		.required('Required'),
-	// 	reviewText: Yup.string()
-	// 		.min(2, 'Too Short!')
-	// 		.max(350, 'Too Long!')
-	// 		.required('Required'),
-	// 	reviewTitle: Yup.string()
-	// 		.min(2, 'Too Short!')
-	// 		.max(350, 'Too Long!')
-	// 		.required('Required'),
-	// }),
 });
 
 const AddModal = ({ setIsOpen, JWT }) => {
@@ -102,6 +83,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 								imageUrl: '',
 								imgAlt: '',
 								mapImg: '',
+								description: '',
 								featuredHotel: false,
 								icons: {
 									wellness: false,
@@ -159,7 +141,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="Title"
 									/>
 									{errors.title && touched.title ? (
-										<div>{errors.title}</div>
+										<div className="error">{errors.title}</div>
 									) : null}
 
 									<Field
@@ -168,7 +150,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="Price"
 									/>
 									{errors.price && touched.price ? (
-										<div>{errors.price}</div>
+										<div className="error">{errors.price}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -176,7 +158,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="Country"
 									/>
 									{errors.country && touched.country ? (
-										<div>{errors.country}</div>
+										<div className="error">{errors.country}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -184,7 +166,15 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="Adress"
 									/>
 									{errors.adress && touched.adress ? (
-										<div>{errors.adress}</div>
+										<div className="error">{errors.adress}</div>
+									) : null}
+									<Field
+										className="addModalForm_input"
+										name="description"
+										placeholder="Adress"
+									/>
+									{errors.description && touched.description ? (
+										<div className="error">{errors.description}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -192,7 +182,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="mapImg"
 									/>
 									{errors.mapImg && touched.mapImg ? (
-										<div>{errors.mapImg}</div>
+										<div className="error">{errors.mapImg}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -200,7 +190,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="imageUrl"
 									/>
 									{errors.imageUrl && touched.imageUrl ? (
-										<div>{errors.imageUrl}</div>
+										<div className="error">{errors.imageUrl}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -208,7 +198,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="imgAlt"
 									/>
 									{errors.imgAlt && touched.imgAlt ? (
-										<div>{errors.imgAlt}</div>
+										<div className="error">{errors.imgAlt}</div>
 									) : null}
 
 									<Field
@@ -217,7 +207,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="sliderImg1"
 									/>
 									{errors.sliderImg1 && touched.sliderImg1 ? (
-										<div>{errors.sliderImg1}</div>
+										<div className="error">{errors.sliderImg1}</div>
 									) : null}
 
 									<Field
@@ -226,7 +216,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="sliderImg2"
 									/>
 									{errors.sliderImg2 && touched.sliderImg2 ? (
-										<div>{errors.sliderImg2}</div>
+										<div className="error">{errors.sliderImg2}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -234,7 +224,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="sliderImg3"
 									/>
 									{errors.sliderImg3 && touched.sliderImg3 ? (
-										<div>{errors.sliderImg3}</div>
+										<div className="error">{errors.sliderImg3}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -242,7 +232,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="sliderImg4"
 									/>
 									{errors.sliderImg4 && touched.sliderImg4 ? (
-										<div>{errors.sliderImg4}</div>
+										<div className="error">{errors.sliderImg4}</div>
 									) : null}
 									<Field
 										className="addModalForm_input"
@@ -250,7 +240,7 @@ const AddModal = ({ setIsOpen, JWT }) => {
 										placeholder="sliderImg5"
 									/>
 									{errors.sliderImg5 && touched.sliderImg5 ? (
-										<div>{errors.sliderImg5}</div>
+										<div className="error">{errors.sliderImg5}</div>
 									) : null}
 									<div className="addModalForm_amenitiesWrapper">
 										<label>
