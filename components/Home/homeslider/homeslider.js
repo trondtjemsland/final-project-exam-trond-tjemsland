@@ -48,9 +48,7 @@ export default function Carousel({ FeaturedHotelCards }) {
 										<span>/day</span>
 									</p>
 									<Link href={`/${id}`}>
-										<a>
-											<button className="cardBtn">Order Now</button>
-										</a>
+										<button className="cardBtn">Order Now</button>
 									</Link>
 								</div>
 							</div>

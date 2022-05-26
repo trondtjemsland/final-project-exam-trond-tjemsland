@@ -47,7 +47,7 @@ const HotelDetails = ({ hotels }) => {
 		mapImg,
 		reviews,
 		imgAlt,
-		description,
+		// description,
 	} = destructuredHotel;
 
 	const myMapLoader = ({ src }) => {
@@ -152,9 +152,9 @@ const HotelDetails = ({ hotels }) => {
 										minded”
 									</p>
 								</div>
-								<div className="reviewsWrapper_desc">
+								{/* <div className="reviewsWrapper_desc">
 									<p>{description}</p>
-								</div>
+								</div> */}
 							</div>
 
 							<Amenities />
