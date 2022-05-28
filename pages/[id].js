@@ -103,7 +103,9 @@ const HotelDetails = ({ hotels }) => {
 								${price}
 								<span>/day</span>
 							</p>
-							<button className="details_bookingBtn">Book your Room</button>
+							<a href="#bookbtn">
+								<button className="details_bookingBtn">Book your Room</button>
+							</a>
 						</div>
 					</div>
 

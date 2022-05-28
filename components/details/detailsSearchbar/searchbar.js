@@ -80,6 +80,7 @@ function Searchbar({ hotels }) {
 				<div className="buttonFormContainer">
 					<button
 						className="searchBarBtn_primary"
+						id="bookbtn"
 						onClick={() => setIsOpen(true)}>
 						Book Now
 					</button>
