@@ -1,6 +1,5 @@
-# Your project title
-
-![image](https://stirring-lebkuchen-d56367.netlify.app)
+# Holidaze
+![image](https://condescending-montalcini-17b160.netlify.app/Images/holidazemock.png)
 
 A simple overview of the use/purpose of the project.
 
