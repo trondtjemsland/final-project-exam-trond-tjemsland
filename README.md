@@ -1,39 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Your project title
+
+![image](https://stirring-lebkuchen-d56367.netlify.app)
+
+A simple overview of the use/purpose of the project.
+
+## Description
+
+We were given the task to make hotel booking page for our exam. We had 7 weeks to design and code the project. I used NextJs to code my exam and it was a challenge, but im pleased with the result.
+
+You can add some bullet points if you'd like to:
+
+- List item 1
+- List item 2
+- List item 3
+
+## Built With
+
+You can list a the tech stack that you've used over here
+
+- [React.js](https://reactjs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Next.js](https://nextjs.org/)
 
 ## Getting Started
 
-First, run the development server:
+### Installing
+
+This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
+
+1. Clone the repo:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone git@github.com:NoroffFEU/portfolio-1-example.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install the dependencies:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Running
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
 
-## Learn More
+To run the app, run the following commands:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[My Twitter page](www.twitter.com)
 
-## Admin Login
+[My LinkedIn page](www.linkedin.com)
 
-admin@admin.com
-Password1234
+## License
+
+You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
+
+## Acknowledgments
+
+This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+C
