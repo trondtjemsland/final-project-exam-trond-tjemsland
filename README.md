@@ -7,11 +7,6 @@ A simple overview of the use/purpose of the project.
 
 We were given the task to make hotel booking page for our exam. We had 7 weeks to design and code the project. I used NextJs to code my exam and it was a challenge, but im pleased with the result.
 
-You can add some bullet points if you'd like to:
-
-- List item 1
-- List item 2
-- List item 3
 
 ## Built With
 
@@ -20,6 +15,8 @@ You can list a the tech stack that you've used over here
 - [React.js](https://reactjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Next.js](https://nextjs.org/)
+- [HTML]
+- [CSS/ SCSs]
 
 ## Getting Started
 
