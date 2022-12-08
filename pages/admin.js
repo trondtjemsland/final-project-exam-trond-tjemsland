@@ -23,10 +23,6 @@ import TabPanel from '@mui/lab/TabPanel';
 import AddModal from '../components/admin/adminadd/addmodal';
 import { BASEURL } from '../components/lib/variables';
 
-// function createData(name, price, id, location) {
-// 	return { name, price, id, location };
-// }
-
 function Admin({ user, JWT, hotels, enquiries, messages }) {
 	console.log(hotels);
 	const router = useRouter();

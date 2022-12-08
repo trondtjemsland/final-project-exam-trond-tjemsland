@@ -2,6 +2,7 @@ import axios from 'axios';
 import { setCookie } from 'nookies';
 import { BASEURL } from '../../components/lib/variables';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
 	const { password, identifier } = req.body;
 

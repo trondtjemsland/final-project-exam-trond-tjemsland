@@ -68,9 +68,6 @@ const AdminModal = ({ setIsOpen }) => {
 										{errors.password && touched.password ? (
 											<div>{errors.password}</div>
 										) : null}
-										<button type="submit" className="loginBtn">
-											Login
-										</button>
 									</Form>
 								)}
 							</Formik>
